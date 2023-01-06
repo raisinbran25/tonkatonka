@@ -2,6 +2,9 @@
   
 ## Greece
 
+| Name | Position | Hand |
+| --- | --- | --- |
+
 ## Mexico
 
 ## Italy
