@@ -1,28 +1,10 @@
-```{r, setup}
-library(reticulate)
-```
-
-Create a variable `x` in the Python session:
-
-```{python}
-x = [1, 2, 3]
-```
-
-Access the Python variable `x` in an R code chunk:
-
 ```{r}
-py$x
+getRandomNumber <- function() {
+  sample(1:6, 1)
+}
 ```
 
-Create a new variable `y` in the Python session using R,
-and pass a data frame to `y`:
-
-```{r}
-py$y <- head(cars)
-```
-
-Print the variable `y` in Python:
-
-```{python}
-print(y)
+```{asis, echo = getRandomNumber() == 4}
+According to https://xkcd.com/221/, we just generated
+a **true** random number!
 ```
