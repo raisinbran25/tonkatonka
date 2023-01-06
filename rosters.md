@@ -4,6 +4,7 @@
 
 | Name | Position | Hand |
 | --- | --- | --- |
+| f | d | d |
 
 ## Mexico
 
