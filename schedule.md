@@ -1,42 +1,33 @@
-## Planned Meals
-> The Alpine lodge extra-large kitchen seats 44 people.  The kitchens are perfect for large group meals and all come equipped with appropriate appliances and utensils. There is an outdoor barbecue!  There is a fridge and individual kitchens in the homes.   So there is a place to store snacks, make sure you stock up for the little ones.
-
-### Monday Dinner
-
- 
-### Tuesday Breakfast (8-9:30am)
-> Grits and Sausage Links in the main hall
-
-### Tuesday Lunch
-> Make lunch at dinning room.  Pack and Go.  Eat outside or at your housing, pick up trash and leave no mess in dinning hall or grounds.
-
-### Tuesday Dinner
-
-
-### Wednesday Breakfast (8-9:30am)
-
-### Wednesday Lunch
-> Make lunch at dinning room.  Pack and Go.  Leave no mess please.  There is option to purchase food at the caverns, there is a picnic are at the site.
-
-
-### Wednesday Dinner
-
-
-### Thursday Breakfast (8-9:30am)
-
-### Thursday Lunch
-> Make lunch at dinning room.  Pack and Go.  Leave no mess please.  There will likely be some down time and extra snacks will be wanted while boating.
-
-### Thursday Dinner
-
-
-### Friday Breakfast (8-9:30am)
-
-### Friday Lunch
-> Make lunch at dinning room.  Pack and Go.  There are lots of places to explore and eat in the community of Shasta Lakes and Redding.
-
-### Friday Dinner
-
-
-### Saturday Breakfast (8-9:30am)
-
+| Date | Day | Time | Event | Meet At | Coordinator |
+| --- | --- | --- | --- | --- | --- |
+| 6/26 | Monday | 3pm | Check in | Shasta Lakes | Frank and Judith |
+| --- | --- | 6pm | Dinner | Dining Room | Lisa |
+| --- | --- | 7pm | Leuck Greet | Dining Room | Frank and Judith |
+| 6/27 | Tuesday | 8am | Breakfast | Dining Room | Lisa |
+| --- | --- | 10am | Greet Games | Field and Court | Johnner, Lora, Shay|
+| --- | --- | 12pm | Make & Go Lunch | Dining Room | Lisa |
+| --- | --- | 2pm | Bike/Hike | Bike Rack | Johnner and Lora |
+| --- | --- | 6pm | Dinner hi| Dining Room | Sherri |
+| --- | --- | 7pm | Family Night | Dining Room | John and Mel |
+| 6/28 | Wednesday | 7:30 | Zumba | Court | Kira |
+| --- | --- | 8:30am | Breakfast | Dining | Lisa |
+| --- | --- | 10am | Pool Olympics | Pool Area | Annalyce, Peyton |
+| --- | --- | 12pm | Make & Go Lunch | Dining Room | Lisa |
+| --- | --- | 1pm | Spelunking | [Cars, 32 minutes travel](http://lakeshastacaverns.clickforward.com/group-tours) | Johnner and Lora|
+| --- | --- | 6pm | Dinner | Dining Room | Angela |
+| --- | --- | 7pm | Family Night | Dining Room | John and Mel |
+| 6/29 | Thursday | 8am | Breakfast | Dining Room | Lisa |
+| --- | --- | 10am | Field Olympics | Field | Jake, Taylor |
+| --- | --- | 12:30pm | Make & Go Lunch | Dining Room | Lisa |
+| --- | --- | 1pm | Boating | [Cars, 25 minutes travel](https://bridgebayhouseboats.com/houseboats/grand-sierra) | Jared |
+| --- | --- | 6pm | Dinner | Dining Room | Jared and Jeremiah |
+| --- | --- | 7pm | Family Night | Dining Room | John and Mel |
+| 6/30 | Friday | 7:30 | Zumba | Court | Lisa |
+| --- | --- | 8:30am | Breakfast | Dining | Kira |
+| --- | --- | 10am | Family Relays | Field or Court | Johnner |
+| --- | --- | 12pm | Make & Go Lunch | Dining Room | Lisa |
+| --- | --- | 1pm | Explore the area | You pick | Self coordinated |
+| --- | --- | 6pm | Dinner | Dining Room | John |
+| --- | --- | 7pm | Family Night | Dining Room |John and Mel |
+| 7/1 | Saturday | 8am | Breakfast | Dining Room | Lisa |
+| --- | --- | 10am | Check Out | Travel Home | Your it |
