@@ -85,3 +85,13 @@
 | 6 | Prlainovic | R | 2.01 |
 
 ## Australia
+
+| Position | Name | Hand | Height |
+| --- | --- | --- | --- |
+| GK | Campbell | R | 1.87 |
+| 1 | Ford | R | 2.00 |
+| 2 | Power | R | 1.89 |
+| 3 | Edwards | R | 1.73 |
+| 4 | Roach | L | 2.02 |
+| 5 | Putt | L | 2.05 |
+| 6 | Howden | R | 1.91 |
