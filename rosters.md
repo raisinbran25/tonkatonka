@@ -26,6 +26,17 @@
 
 ## Italy
 
+
+| Position | Name | Hand | Height |
+| --- | --- | --- | --- |
+| GK | Lungo | R | 1.71 |
+| 1 | Fulvio | R | 1.69 |
+| 2 | Luongo | R | 1.87 |
+| 3 | Figari | R | 1.73 |
+| 4 | Dolce | R | 2.01 |
+| 5 | Aicardi | L | 1.98 |
+| 6 | Nicosia | L | 2.12 |
+
 ## 'Murica
 
 ## Spain
