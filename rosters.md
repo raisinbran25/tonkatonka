@@ -52,16 +52,36 @@
 
 | Position | Name | Hand | Height |
 | --- | --- | --- | --- |
-| GK | Granadoz | R | 1.95 |
-| 1 | Lopez | R | 2.01 |
-| 2 | Toro | R | 2.17 |
-| 3 | Famera | R | 1.73 |
-| 4 | Tahull | L | 2.16 |
-| 5 | Busstos | L | 1.98 |
-| 6 | Perrone | R | 1.92 |
+| GK | Granadoz | R | 1.85 |
+| 1 | Lopez | R | 2.11 |
+| 2 | Toro | R | 1.97 |
+| 3 | Famera | R | 2.13 |
+| 4 | Tahull | L | 1.83 |
+| 5 | Busstos | L | 1.88 |
+| 6 | Perrone | R | 1.91 |
 
-## Crotia
+## Croatia
+
+| Position | Name | Hand | Height |
+| --- | --- | --- | --- |
+| GK | Bijac | R | 2.15 |
+| 1 | Buric | R | 2.14 |
+| 2 | Fatovic | R | 2.07 |
+| 3 | Krapic | R | 1.93 |
+| 4 | Lazic | L | 1.79 |
+| 5 | Matias | L | 1.98 |
+| 6 | Marko | R | 2.01 |
 
 ## Serbia
+
+| Position | Name | Hand | Height |
+| --- | --- | --- | --- |
+| GK | Mandic | R | 1.98 |
+| 1 | Dedovic | R | 2.04 |
+| 2 | Lazic | R | 1.90 |
+| 3 | Mitrovic | R | 1.93 |
+| 4 | Razovic | L | 1.94 |
+| 5 | Aleksic | L | 2.02 |
+| 6 | Prlainovic | R | 2.01 |
 
 ## Australia
