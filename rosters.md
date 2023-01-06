@@ -39,6 +39,17 @@
 
 ## 'Murica
 
+
+| Position | Name | Hand | Height |
+| --- | --- | --- | --- |
+| GK | Wolf | R | 1.95 |
+| 1 | Hooper | R | 2.01 |
+| 2 | Vavic | R | 2.17 |
+| 3 | Obert | R | 1.73 |
+| 4 | Daube | R | 2.16 |
+| 5 | Woodhead | L | 1.98 |
+| 6 | Smith | L | 1.92 |
+
 ## Spain
 
 ## Crotia
