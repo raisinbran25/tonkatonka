@@ -28,7 +28,7 @@
     width: auto;
     height: auto;
     border-radius: 10px;
-    background-color: #665B45;
+    background-color: #152238;
     border: 3px solid black;
     font-size: auto;
 
@@ -75,7 +75,7 @@
     grid-row: span 1;
 
     border-radius: 10px;
-    background-color: #665B45;
+    background-color: #152238;
     padding: 1em;
     font-size: auto;
     border: 5px solid black;
