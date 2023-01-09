@@ -21,20 +21,20 @@
 <div class="row">
 <image src="/images/tonkablack.webp"
        alt="Tonka Yellow/Black"
-       style="float; center; width=80%;" />
+       style="float; center; width=400px;" />
 
 - Ylw/Brn
 <div class="row">
 <image src="/images/tonkabrown.jpeg"
        alt="Tonka Yellow/Brown"
-       style="float; center; width=80%;" />
+       style="float; center; width=400px;" />
 
 ### Get Tonka'd
 > You just got Tonka'd
 <div class="row">
 <image src="/images/gettonka.webp"
        alt="GetTonka'd"
-       style="float; center; width=80%;" />
+       style="float; center; width=400px;" />
        
 ### TONKA x Soccer T-Shirt
 > Partered with the Tonka-Soccer League
@@ -42,10 +42,10 @@
 <div class="row">
 <image src="/images/tonkasoccer.webp"
        alt="Tonka Soccer White"
-       style="float; center; width=80%;" />
+       style="float; center; width=400px;" />
   
 - Red
 <div class="row">
 <image src="/images/tonkasoccerred.webp"
        alt="Tonka Soccer White"
-       style="float; center; width=80%;" />
+       style="float; center; width=400px;" />
