@@ -102,20 +102,20 @@
     <div class="tournament-output" id="team3">team3</div>
     <!--row 2-->
     <div class="tournament-output" id="team2">team2</div>
-    <div class="tournament-output" id="win12">win12</div>
+    <div class="tournament-output" id="win12">winner 1-2</div>
     <div class="tournament-empty"></div>
-    <div class="tournament-output" id="win34">win34</div>
+    <div class="tournament-output" id="win34">winner 3-4</div>
     <div class="tournament-output" id="team4">team4</div>
     <!--row 3-->
     <div class="tournament-empty"></div>
     <div class="tournament-empty"></div>
-    <div class="tournament-output" id="win1234">win1234</div>
+    <div class="tournament-output" id="win1234">winner 1-4</div>
     <div class="tournament-empty"></div>
     <div class="tournament-empty"></div>
     <!--row 4-->
     <div class="tournament-empty"></div>
     <div class="tournament-empty"></div>
-    <div class="tournament-output" id="win5678">win5678</div>
+    <div class="tournament-output" id="win5678">winner 5-8</div>
     <div class="tournament-empty"></div>
     <div class="tournament-empty"></div>
     <!--row 5-->
