@@ -1,4 +1,4 @@
-| Date | Day | Time | Event | Meet At |
+| Date | Day | Time | Teams Playing | Location |
 | --- | --- | --- | --- | --- |
 | 6/26 | Monday | 2pm | Mexico vs Croatia | Athens, Greece |
 | 6/27 | Tuesday | 12am | Greece vs 'Murica | Athens, Greece |
