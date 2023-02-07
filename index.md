@@ -291,7 +291,7 @@ function addcords() {
     }
 }
 function placemines() { // adds ms value "9" in object
-    for (let i = 0; i < Number(numines); i++) { // place 10 mines
+    while (mids.length < numines) { // place 10 mines
         r = Math.floor(Math.random() * 64)
         if (mines.cord[nums[r]]["ms"] == 0) { //avoid repeat mines
             mines.cord[nums[r]]["ms"] = 9
