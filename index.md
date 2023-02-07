@@ -1,15 +1,15 @@
 ---
 title: minesweeper
-layout: default
+layout: 
 description: 
 ---
 <!-- Style (CSS) implementation of the map. -->
 <style>
 /* class to create the map's container; uses CSS grid dsiplay to partition off buttons */
 .map-container { 
-    width: 500px; /* this width and height is specified for mobile devices by default */
-    height: 500px;
-    right: 50px;
+    width: 90%; /* this width and height is specified for mobile devices by default */
+    height: 90%;
+    right: 10%;
 
     display: grid;
     grid-template-columns: repeat(8, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
@@ -146,7 +146,7 @@ description:
     All buttons have onclick JavaScript action
     All actions result in map-output.innerHTML change
 -->
-number of mines:<input type="text" id="button" value="">
+number of mines:<input type="text" id="button" value="g">
     <button type="button" onclick="enter()">Enter</button>
 <div class="map-container">
     <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
