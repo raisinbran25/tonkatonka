@@ -113,7 +113,7 @@ description:
 
 .map-longbutton {
     width: 328px;
-    height: 40px;
+    height: 80px;
     border-radius: 0px;
     background-color: #000000;
     border: 0px solid black;
@@ -125,7 +125,7 @@ description:
 
     /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 8;
-    grid-row: span 1;
+    grid-row: span 2;
 
     /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
@@ -146,6 +146,8 @@ description:
     All buttons have onclick JavaScript action
     All actions result in map-output.innerHTML change
 -->
+number of mines:<input type="text" id="button" value="">
+    <button type="button" onclick="enter()">Enter</button>
 <div class="map-container">
     <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
     <!--row 1-->
@@ -225,6 +227,50 @@ description:
 
 <!-- JavaScript (JS) implementation of the map(backend) -->
 <script>
+//user input
+numines = null
+function enter() {
+    input = document.getElementById("button").value
+    if (input > 0) {
+        numines = input
+    }
+}
+// timer code
+starttime = null
+finaltime = null
+min = 00
+sec = 00
+hsec = 00
+function updatetime() {
+    time = Math.floor((finaltime - starttime) / 10)
+    min = Math.floor(time / 6000)
+    if (min < 10) {
+        min = "0" + String(min)
+    }
+    else {
+        min = String(min)
+    }
+    time = time % 6000
+    sec = Math.floor(time / 100)
+    if (sec < 10) {
+        sec = "0" + String(sec)
+    }
+    else {
+        sec = String(sec)
+    }
+    time = time % 100
+    hsec = time
+    if (hsec < 10) {
+        hsec = "0" + String(hsec)
+    }
+    else {
+        hsec = String(hsec)
+    }
+    
+    document.getElementById("reset").innerHTML = "congratulations! you won with a time of " + min + ":" + sec + "." + hsec + "! click here to reset." 
+}
+
+// minesweeper code
 winstatus = null
 mines = { // object storing ids and number of surrounding mines
     cord: {
@@ -245,7 +291,7 @@ function addcords() {
     }
 }
 function placemines() { // adds ms value "9" in object
-    for (let i = 0; i < 10; i++) { // place 10 mines
+    for (let i = 0; i < Number(numines); i++) { // place 10 mines
         r = Math.floor(Math.random() * 64)
         if (mines.cord[nums[r]]["ms"] == 0) { //avoid repeat mines
             mines.cord[nums[r]]["ms"] = 9
@@ -269,6 +315,9 @@ function calcmines() { // updates all other ms values in object
     }
 }
 function play() { // button functions and class
+    if (numines == null) {
+        return
+    }
     for (let i = 0; i < nums.length; i++) {
         cord = String(nums[i])
         bname = document.getElementById("b" + cord)
@@ -285,6 +334,8 @@ function play() { // button functions and class
     }
     document.getElementById("reset").innerHTML = "" 
     document.getElementById("reset").onclick = null
+    inprogress = true
+    starttime = Date.now()
 }
 function number(cord) { // reveal number
     if (winstatus != null) {
@@ -299,6 +350,7 @@ function mine() { // game over
     if (winstatus == true) {
         return
     }
+    inprogress = false
     winstatus = false
     for (let i = 0; i < nums.length; i++) {
         cord = String(nums[i])
@@ -350,15 +402,17 @@ function win() {
         }
     }
     bname = document.getElementById("reset")
-    bname.innerHTML = "congratulations, you won! click here to reset."
     bname.addEventListener("click", function () {
         window.location.reload()
     })
+    finaltime = Date.now()
+    updatetime()
 }
 function initialize() {
     addcords()
     placemines()
     calcmines()
     play()
+     
 }
 </script>
