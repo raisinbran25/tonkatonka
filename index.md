@@ -115,7 +115,7 @@ description:
     width: 328px;
     height: 80px;
     border-radius: 0px;
-    background-color: #000000;
+    background-color: #808080;
     border: 0px solid black;
     font-size: 1.5fem;
 
@@ -146,10 +146,10 @@ description:
     All buttons have onclick JavaScript action
     All actions result in map-output.innerHTML change
 -->
-number of mines:<input type="text" id="button" value="g">
+number of mines:<input type="text" id="button" value="enter a number 1-20">
     <button type="button" onclick="enter()">Enter</button>
 <div class="map-container">
-    <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
+    <div class="map-longbutton" id="reset" onclick="initialize()">enter the number of mines you would like above, then click here to play!</div>
     <!--row 1-->
     <div class="map-blankbutton" id="b18"></div>
     <div class="map-blankbutton" id="b28"></div>
