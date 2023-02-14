@@ -1,6 +1,6 @@
 ---
 title: minesweeper
-layout: 
+layout: default
 description: 
 ---
 <!-- Style (CSS) implementation of the map. -->
