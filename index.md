@@ -7,17 +7,17 @@ description:
 .home-container { 
     width: 1000px; 
     height: 500px;
-    right: 50px;
+    right: 0px;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     grid-template-rows: repeat(4, 1fr);
-    gap: 1px 1px;
+    gap: 0px 0px;
 }
 
 .home-gamebutton {
-    width: 40px;
-    height: 40px;
+    width: 250px;
+    height: 250px;
     border-radius: 0px;
     background-color: #90EE90;
     border: 0px solid black;
