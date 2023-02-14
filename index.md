@@ -4,4 +4,4 @@ layout: default
 description: 
 ---
 
-THis will be the front page SIUUUUUU
+Welcome to Cooler Math Games! Click on a game below to play!
