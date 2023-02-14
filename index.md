@@ -32,6 +32,10 @@ description:
 
     transition: all 0s; 
 }
+
+.home-gamebutton:hover {
+    background-color: #373737;
+}
 </style>
 
 Welcome to Cooler Math Games! Click on a game below to play!
