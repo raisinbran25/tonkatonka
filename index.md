@@ -5,8 +5,8 @@ description:
 ---
 <style>
 .home-container { 
-    width: 1000px; 
-    height: 500px;
+    width: 600px; 
+    height: 300px;
     right: 0px;
 
     display: grid;
@@ -16,10 +16,10 @@ description:
 }
 
 .home-gamebutton {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     border-radius: 0px;
-    background-color: #90EE90;
+    background-color: #000000;
     border: 0px solid black;
     font-size: 1.5fem;
 
