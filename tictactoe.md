@@ -1,3 +1,9 @@
+---
+title: Tic Tac Toe
+layout: default
+description: 
+---
+
 <style>
     table {
       border-collapse: collapse;
@@ -11,9 +17,9 @@
       border: 1px solid black;
       font-size: 36px;
     }
-    </style>
+</style>
     
-    <table id="board">
+  <table id="board">
         <tr>
           <td id="cell-0"></td>
           <td id="cell-1"></td>
@@ -29,9 +35,11 @@
           <td id="cell-7"></td>
           <td id="cell-8"></td>
         </tr>
-      </table>
-    
-      <script>
+  </table>
+
+<button onclick="location.reload()">Reload</button>
+
+<script>
     
     Xscore = 0 
     Oscore = 0
@@ -98,5 +106,3 @@
       }
     }
     </script>
-    
-    <button onclick="location.reload()">Reload</button>

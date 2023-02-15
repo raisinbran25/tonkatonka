@@ -1,3 +1,9 @@
+---
+title: Minesweeper
+layout: default
+description: 
+---
+
 <!-- Style (CSS) implementation of the map. -->
 <style>
 /* class to create the map's container; uses CSS grid dsiplay to partition off buttons */
