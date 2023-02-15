@@ -143,22 +143,19 @@
 -->
 <div>
     <table>
-    <thead>
-    <tr>
-        <th>User ID</th>
-        <th>Name</th>
-        <th>Posts</th>
-        <th>DOB</th>
-        <th>Age</th>
-    </tr>
-    </thead>
-    <tbody id="result">
-        <!-- javascript generated data -->
-    </tbody>
+        <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Posts</th>
+            <th>DOB</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody id="result">
+            <!-- javascript generated data -->
+        </tbody>
     </table>
-
-    <p>Create API</p>
-
     <form action="javascript:create_user()">
         <p><label>
             User ID:
@@ -462,35 +459,35 @@ function initialize() {
      
 }
 
-// prepare HTML result container for new output
-const resultContainer = document.getElementById("result");
-// prepare URL's to allow easy switch from deployment and localhost
-//const url = "http://localhost:8086/api/players"
-const url = "http://172.27.47.93:8086/api/players"
-const create_fetch = url + '/create';
-const read_fetch = url + '/';
+  // prepare HTML result container for new output
+  const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+  //const url = "http://localhost:8086/api/users"
+  const url = "https://flask.nighthawkcodingsociety.com/api/users"
+  const create_fetch = url + '/create';
+  const read_fetch = url + '/';
 
-// Load players on page entry
-read_players();
+  // Load users on page entry
+  read_users();
 
 
-// Display User Table, data is fetched from Backend Database
-function read_players() {
+  // Display User Table, data is fetched from Backend Database
+  function read_users() {
     // prepare fetch options
     const read_options = {
-        method: 'GET', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'omit', // include, *same-origin, omit
-        headers: {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'omit', // include, *same-origin, omit
+      headers: {
         'Content-Type': 'application/json'
-        },
+      },
     };
 
     // fetch the data from API
     fetch(read_fetch, read_options)
-        // response is a RESTful "promise" on any successful fetch
-        .then(response => {
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
         // check for response errors
         if (response.status !== 200) {
             const errorMsg = 'Database read error: ' + response.status;
@@ -506,29 +503,30 @@ function read_players() {
         response.json().then(data => {
             console.log(data);
             for (let row in data) {
-                console.log(data[row]);
-                add_row(data[row]);
+              console.log(data[row]);
+              add_row(data[row]);
             }
         })
     })
     // catch fetch errors (ie ACCESS to server blocked)
     .catch(err => {
-        console.error(err);
-        const tr = document.createElement("tr");
-        const td = document.createElement("td");
-        td.innerHTML = err;
-        tr.appendChild(td);
-        resultContainer.appendChild(tr);
+      console.error(err);
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.innerHTML = err;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
     });
-}
+  }
 
-function create_player(){
+  function create_user(){
     //Validate Password (must be 6-20 characters in len)
     //verifyPassword("click");
     const body = {
-        id: document.getElementById("id").value,
+        uid: document.getElementById("uid").value,
         name: document.getElementById("name").value,
-        score: document.getElementById("score").value,
+        password: document.getElementById("password").value,
+        dob: document.getElementById("dob").value
     };
     const requestOptions = {
         method: 'POST',
@@ -542,17 +540,17 @@ function create_player(){
     // URL for Create API
     // Fetch API call to the database to create a new user
     fetch(create_fetch, requestOptions)
-        .then(response => {
+      .then(response => {
         // trap error response from Web API
         if (response.status !== 200) {
-            const errorMsg = 'Database create error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            resultContainer.appendChild(tr);
-            return;
+          const errorMsg = 'Database create error: ' + response.status;
+          console.log(errorMsg);
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.innerHTML = errorMsg;
+          tr.appendChild(td);
+          resultContainer.appendChild(tr);
+          return;
         }
         // response contains valid result
         response.json().then(data => {
@@ -561,26 +559,31 @@ function create_player(){
             add_row(data);
         })
     })
-}
+  }
 
-function add_row(data) {
+  function add_row(data) {
     const tr = document.createElement("tr");
-    const id = document.createElement("td");
+    const uid = document.createElement("td");
     const name = document.createElement("td");
-    const score = document.createElement("td")
-
+    const posts = document.createElement("td")
+    const dob = document.createElement("td");
+    const age = document.createElement("td");
+  
 
     // obtain data that is specific to the API
-    id.innerHTML = data.id; 
+    uid.innerHTML = data.uid; 
     name.innerHTML = data.name; 
-    score.innerHTML = data.score; 
+    posts.innerHTML = data.posts.length;
+    dob.innerHTML = data.dob; 
+    age.innerHTML = data.age; 
 
     // add HTML to container
-    tr.appendChild(id);
+    tr.appendChild(uid);
     tr.appendChild(name);
-    tr.appendChild(score);
+    tr.appendChild(posts);
+    tr.appendChild(dob);
+    tr.appendChild(age);
 
     resultContainer.appendChild(tr);
-}
-
+  }
 </script>
