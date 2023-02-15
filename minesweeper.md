@@ -145,30 +145,38 @@
     <table>
     <thead>
     <tr>
-        <th>ID</th>
+        <th>User ID</th>
         <th>Name</th>
-        <th>Score</th>
+        <th>Posts</th>
+        <th>DOB</th>
+        <th>Age</th>
     </tr>
     </thead>
     <tbody id="result">
         <!-- javascript generated data -->
     </tbody>
     </table>
-</div>
 
-<div>
-    <form action="javascript:create_player()">
+    <p>Create API</p>
+
+    <form action="javascript:create_user()">
         <p><label>
-            ID:
-            <input type="text" name="id" id="id" required>
+            User ID:
+            <input type="text" name="uid" id="uid" required>
         </label></p>
         <p><label>
             Name:
             <input type="text" name="name" id="name" required>
         </label></p>
         <p><label>
-            Score:
-            <input type="text" name="score" id="score" required>
+            Password:
+            <input type="password" name="password" id="password" required>
+            Verify Password:
+            <input type="password" name="passwordV" id="passwordV" required>
+        </label></p>
+        <p><label>
+            Birthday:
+            <input type="date" name="dob" id="dob">
         </label></p>
         <p>
             <button>Create</button>
