@@ -432,7 +432,7 @@ function initialize() {
 const resultContainer = document.getElementById("result");
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/players"
-const url = "https://flask.com/api/players"
+const url = "http://172.27.47.93:8086/api/players"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 
