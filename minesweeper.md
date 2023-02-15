@@ -219,33 +219,35 @@ number of mines:<input type="text" id="button" value="#, 1-20">
     <div class="map-blankbutton" id="b81"></div>
 </div>
 
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Score</th>
-  </tr>
-  </thead>
-  <tbody id="result">
-    <!-- javascript generated data -->
-  </tbody>
-</table>
+<div>
+    <table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+    </thead>
+    <tbody id="result">
+        <!-- javascript generated data -->
+    </tbody>
+    </table>
+</div>
 
-<p>Create API</p>
-
-<form action="javascript:create_player()">
-    <p><label>
-        name:
-        <input type="text" name="name" id="name" required>
-    </label></p>
-    <p><label>
-        Score:
-        <input type="text" name="score" id="score" required>
-    </label></p>
-    <p>
-        <button>Create</button>
-    </p>
-</form>
+<div>
+    <form action="javascript:create_player()">
+        <p><label>
+            name:
+            <input type="text" name="name" id="name" required>
+        </label></p>
+        <p><label>
+            Score:
+            <input type="text" name="score" id="score" required>
+        </label></p>
+        <p>
+            <button>Create</button>
+        </p>
+    </form>
+</div>
 
 <!-- JavaScript (JS) implementation of the map(backend) -->
 <script>
