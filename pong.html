@@ -101,7 +101,7 @@
 		height: 50px;
 		width: 50px;
 		color: white;	
-		position: fixed;
+		position: fixed;	
 		left: 89vw;
 		margin-top: -50px;
 	}
@@ -164,7 +164,7 @@
 			gameState = gameState == 'start' ? 'play' : 'start';
 			if (gameState == 'play') {
 			message.innerHTML = '';
-
+			score.style.left = 42 + 'vw';
 			message.style.left = 42 + 'vw';
 			requestAnimationFrame(() => {
 				dx = Math.floor(Math.random() * 4) + 3;
