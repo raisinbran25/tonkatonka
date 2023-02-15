@@ -43,4 +43,4 @@ Welcome to Cooler Math Games! Click on a game below to play!
     <div class="home-gamebutton" id="minesweeper" onclick="window.location='minesweeper'"> Minesweeper</div>
     <div class="home-gamebutton" id="tictactoe" onclick="window.location='tictactoe'"> Tic Tac Toe</div>
     <div class="home-gamebutton" id="pong" onclick="window.location='pong'">Pong</div>
-    <div class="home-gamebutton" id="fablefrontier" onclick="window.location='minesweeper'">Fable Frontier</div>
+    <div class="home-gamebutton" id="fablefrontier" onclick="window.location='fablefrontier'">Fable Frontier</div>
