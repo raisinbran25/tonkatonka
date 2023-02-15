@@ -19,7 +19,7 @@ description:
     }
 </style>
     
-  <table id="board">
+<table id="board">
         <tr>
           <td id="cell-0"></td>
           <td id="cell-1"></td>
@@ -35,7 +35,7 @@ description:
           <td id="cell-7"></td>
           <td id="cell-8"></td>
         </tr>
-  </table>
+</table>
 
 <button onclick="location.reload()">Reload</button>
 
@@ -105,4 +105,4 @@ description:
         alert("Draw!");
       }
     }
-    </script>
+</script>
