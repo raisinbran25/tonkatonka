@@ -4,25 +4,18 @@ layout: default
 description: 
 ---
 
-<!-- Style (CSS) implementation of the map. -->
 <style>
-/* class to create the map's container; uses CSS grid dsiplay to partition off buttons */
 .map-container { 
-    width: 500px; /* this width and height is specified for mobile devices by default */
+    width: 500px;
     height: 500px;
     right: 50px;
 
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
     gap: 1px 1px;
 }
 
-/* 
-    CSS allows programmers to use media queries to change the size of classes based on the size of the device.
-    This allows us to make it so that our website looks good on both mobile and desktop. If the width of the
-    device is big enough, then the map will take up more of the screen.
-*/
 @media (min-width: 100px) { 
     .map-container {
         width: 50px;
@@ -31,7 +24,6 @@ description:
     }
 }
 
-/* styling for the map buttons themselves */
 .map-blankbutton {
     width: 40px;
     height: 40px;
@@ -39,16 +31,11 @@ description:
     background-color: #90EE90;
     border: 0px solid black;
     font-size: 1.5fem;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -59,16 +46,11 @@ description:
     background-color: #D2B48C;
     border: 0px solid black;
     font-size: 1.5fem;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -79,16 +61,11 @@ description:
     background-color: #AA4A44;
     border: 0px solid black;
     font-size: 1.5fem;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -99,16 +76,11 @@ description:
     background-color: #D2B48C;
     border: 0px solid black;
     font-size: 1.5fem;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -119,20 +91,14 @@ description:
     background-color: #808080;
     border: 0px solid black;
     font-size: 1.5fem;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 8;
     grid-row: span 2;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
-/* darkens the background color on hover to create a selecting effect */
 .map-blankbutton:hover {
     background-color: #373737;
 }
@@ -141,12 +107,6 @@ description:
 }
 </style>
 
-
-<!-- HTML implementation of the map. 
-    CSS sets 4 buttons (map-blankbutton) to a row
-    All buttons have onclick JavaScript action
-    All actions result in map-output.innerHTML change
--->
 <div>
     <table>
         <thead>
@@ -268,7 +228,6 @@ description:
     <div class="map-blankbutton" id="b81"></div>
 </div>
 
-<!-- JavaScript (JS) implementation of the map(backend) -->
 <script>
 //user input
 numines = null
@@ -465,131 +424,131 @@ function initialize() {
      
 }
 
-  // prepare HTML result container for new output
-  const resultContainer = document.getElementById("result");
-  // prepare URL's to allow easy switch from deployment and localhost
-  //const url = "http://localhost:8086/api/users"
-  const url = "https://flask.nighthawkcodingsociety.com/api/users"
-  const create_fetch = url + '/create';
-  const read_fetch = url + '/';
+// prepare HTML result container for new output
+const resultContainer = document.getElementById("result");
+// prepare URL's to allow easy switch from deployment and localhost
+//const url = "http://localhost:8086/api/users"
+const url = "https://flask.nighthawkcodingsociety.com/api/users"
+const create_fetch = url + '/create';
+const read_fetch = url + '/';
 
-  // Load users on page entry
-  read_users();
+// Load users on page entry
+read_users();
 
 
-  // Display User Table, data is fetched from Backend Database
-  function read_users() {
-    // prepare fetch options
-    const read_options = {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'omit', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-      },
-    };
+// Display User Table, data is fetched from Backend Database
+function read_users() {
+// prepare fetch options
+const read_options = {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'omit', // include, *same-origin, omit
+    headers: {
+    'Content-Type': 'application/json'
+    },
+};
 
-    // fetch the data from API
-    fetch(read_fetch, read_options)
-      // response is a RESTful "promise" on any successful fetch
-      .then(response => {
-        // check for response errors
-        if (response.status !== 200) {
-            const errorMsg = 'Database read error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            resultContainer.appendChild(tr);
-            return;
+// fetch the data from API
+fetch(read_fetch, read_options)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+    // check for response errors
+    if (response.status !== 200) {
+        const errorMsg = 'Database read error: ' + response.status;
+        console.log(errorMsg);
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        td.innerHTML = errorMsg;
+        tr.appendChild(td);
+        resultContainer.appendChild(tr);
+        return;
+    }
+    // valid response will have json data
+    response.json().then(data => {
+        console.log(data);
+        for (let row in data) {
+            console.log(data[row]);
+            add_row(data[row]);
         }
-        // valid response will have json data
-        response.json().then(data => {
-            console.log(data);
-            for (let row in data) {
-              console.log(data[row]);
-              add_row(data[row]);
-            }
-        })
     })
-    // catch fetch errors (ie ACCESS to server blocked)
-    .catch(err => {
-      console.error(err);
-      const tr = document.createElement("tr");
-      const td = document.createElement("td");
-      td.innerHTML = err;
-      tr.appendChild(td);
-      resultContainer.appendChild(tr);
-    });
-  }
-
-  function create_user(){
-    //Validate Password (must be 6-20 characters in len)
-    //verifyPassword("click");
-    const body = {
-        uid: document.getElementById("uid").value,
-        name: document.getElementById("name").value,
-        password: document.getElementById("password").value,
-        dob: document.getElementById("dob").value
-    };
-    const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json",
-            'Authorization': 'Bearer my-token',
-        },
-    };
-
-    // URL for Create API
-    // Fetch API call to the database to create a new user
-    fetch(create_fetch, requestOptions)
-      .then(response => {
-        // trap error response from Web API
-        if (response.status !== 200) {
-          const errorMsg = 'Database create error: ' + response.status;
-          console.log(errorMsg);
-          const tr = document.createElement("tr");
-          const td = document.createElement("td");
-          td.innerHTML = errorMsg;
-          tr.appendChild(td);
-          resultContainer.appendChild(tr);
-          return;
-        }
-        // response contains valid result
-        response.json().then(data => {
-            console.log(data);
-            //add a table row for the new/created userid
-            add_row(data);
-        })
-    })
-  }
-
-  function add_row(data) {
+})
+// catch fetch errors (ie ACCESS to server blocked)
+.catch(err => {
+    console.error(err);
     const tr = document.createElement("tr");
-    const uid = document.createElement("td");
-    const name = document.createElement("td");
-    const posts = document.createElement("td")
-    const dob = document.createElement("td");
-    const age = document.createElement("td");
-  
-
-    // obtain data that is specific to the API
-    uid.innerHTML = data.uid; 
-    name.innerHTML = data.name; 
-    posts.innerHTML = data.posts.length;
-    dob.innerHTML = data.dob; 
-    age.innerHTML = data.age; 
-
-    // add HTML to container
-    tr.appendChild(uid);
-    tr.appendChild(name);
-    tr.appendChild(posts);
-    tr.appendChild(dob);
-    tr.appendChild(age);
-
+    const td = document.createElement("td");
+    td.innerHTML = err;
+    tr.appendChild(td);
     resultContainer.appendChild(tr);
-  }
+});
+}
+
+function create_user(){
+//Validate Password (must be 6-20 characters in len)
+//verifyPassword("click");
+const body = {
+    uid: document.getElementById("uid").value,
+    name: document.getElementById("name").value,
+    password: document.getElementById("password").value,
+    dob: document.getElementById("dob").value
+};
+const requestOptions = {
+    method: 'POST',
+    body: JSON.stringify(body),
+    headers: {
+        "content-type": "application/json",
+        'Authorization': 'Bearer my-token',
+    },
+};
+
+// URL for Create API
+// Fetch API call to the database to create a new user
+fetch(create_fetch, requestOptions)
+    .then(response => {
+    // trap error response from Web API
+    if (response.status !== 200) {
+        const errorMsg = 'Database create error: ' + response.status;
+        console.log(errorMsg);
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        td.innerHTML = errorMsg;
+        tr.appendChild(td);
+        resultContainer.appendChild(tr);
+        return;
+    }
+    // response contains valid result
+    response.json().then(data => {
+        console.log(data);
+        //add a table row for the new/created userid
+        add_row(data);
+    })
+})
+}
+
+function add_row(data) {
+const tr = document.createElement("tr");
+const uid = document.createElement("td");
+const name = document.createElement("td");
+const posts = document.createElement("td")
+const dob = document.createElement("td");
+const age = document.createElement("td");
+
+
+// obtain data that is specific to the API
+uid.innerHTML = data.uid; 
+name.innerHTML = data.name; 
+posts.innerHTML = data.posts.length;
+dob.innerHTML = data.dob; 
+age.innerHTML = data.age; 
+
+// add HTML to container
+tr.appendChild(uid);
+tr.appendChild(name);
+tr.appendChild(posts);
+tr.appendChild(dob);
+tr.appendChild(age);
+
+resultContainer.appendChild(tr);
+}
 </script>
