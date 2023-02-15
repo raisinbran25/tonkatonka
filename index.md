@@ -44,3 +44,7 @@ Welcome to Cooler Math Games! Click on a game below to play!
     <div class="home-gamebutton" id="tictactoe"> Tic Tac Toe</div>
     <div class="home-gamebutton" id="pong">Pong</div>
     <div class="home-gamebutton" id="fablefrontier">Fable Frontier</div>
+
+<script>
+document.getElementById("minesweeper").style.backgroundImage = url("minesweeper.jpg")
+</script>
