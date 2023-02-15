@@ -1,5 +1,5 @@
 ---
-title: minesweeper
+title: Home
 layout: default
 description: 
 ---
