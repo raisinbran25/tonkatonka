@@ -145,6 +145,7 @@
     <table>
     <thead>
     <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Score</th>
     </tr>
@@ -158,7 +159,11 @@
 <div>
     <form action="javascript:create_player()">
         <p><label>
-            name:
+            ID:
+            <input type="text" name="id" id="id" required>
+        </label></p>
+        <p><label>
+            Name:
             <input type="text" name="name" id="name" required>
         </label></p>
         <p><label>
@@ -513,6 +518,7 @@ function create_player(){
     //Validate Password (must be 6-20 characters in len)
     //verifyPassword("click");
     const body = {
+        id: document.getElementById("id").value,
         name: document.getElementById("name").value,
         score: document.getElementById("score").value,
     };
@@ -551,16 +557,18 @@ function create_player(){
 
 function add_row(data) {
     const tr = document.createElement("tr");
+    const id = document.createElement("td");
     const name = document.createElement("td");
     const score = document.createElement("td")
 
 
     // obtain data that is specific to the API
-    uid.innerHTML = data.uid; 
+    id.innerHTML = data.id; 
     name.innerHTML = data.name; 
     score.innerHTML = data.score; 
 
     // add HTML to container
+    tr.appendChild(id);
     tr.appendChild(name);
     tr.appendChild(score);
 
