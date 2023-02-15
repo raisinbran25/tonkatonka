@@ -46,5 +46,5 @@ Welcome to Cooler Math Games! Click on a game below to play!
     <div class="home-gamebutton" id="fablefrontier">Fable Frontier</div>
 
 <script>
-document.getElementById("minesweeper").style.backgroundImage = "url('minesweeper.jpg')"
+document.getElementById("minesweeper").style.backgroundImage = "url(minesweeper.jpg)"
 </script>
