@@ -1,7 +1,7 @@
 ## Standings
 > Water Polo standings from teams around the world.
 
-|placement|Country|W/L|
+|placement|Country|Wins/Games|
 |-|-|-|
 |1|Mexico|17/20|
 |2|Australia|14/18|
