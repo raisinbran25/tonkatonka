@@ -164,7 +164,7 @@
 			gameState = gameState == 'start' ? 'play' : 'start';
 			if (gameState == 'play') {
 			message.innerHTML = '';
-			score.style.left = 42 + 'vw';
+			score.style.left = 49 + 'vw';
 			message.style.left = 42 + 'vw';
 			requestAnimationFrame(() => {
 				dx = Math.floor(Math.random() * 4) + 3;
@@ -258,6 +258,7 @@
 		} else {
 		score_1.innerHTML = +score_1.innerHTML + 1;
 		}
+		message.style.left = 40 + 'vw';
 		// send rally length to backend here
 		gameState = 'start';
 
