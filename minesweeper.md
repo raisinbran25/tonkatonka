@@ -506,7 +506,7 @@ fetch(read_fetch, read_options)
 });
 }
 
-function create_user(){
+function create_player(){
 //Validate Password (must be 6-20 characters in len)
 //verifyPassword("click");
 const body = {
