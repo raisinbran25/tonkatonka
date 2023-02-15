@@ -158,7 +158,9 @@
 	document.addEventListener('keydown', (e) => {
 	if (gameState == 'start' ){
 		if (e.key == 'Enter') {
+			if (score != 0) {
 			score.innerHTML = 0;
+			}
 			score.style.height = 50;
 			score.style.width = 50;
 			r = 1;
