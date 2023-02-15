@@ -141,8 +141,41 @@
     All buttons have onclick JavaScript action
     All actions result in map-output.innerHTML change
 -->
-number of mines:<input type="text" id="button" value="#, 1-20">
+<div>
+    <table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+    </thead>
+    <tbody id="result">
+        <!-- javascript generated data -->
+    </tbody>
+    </table>
+</div>
+
+<div>
+    <form action="javascript:create_player()">
+        <p><label>
+            name:
+            <input type="text" name="name" id="name" required>
+        </label></p>
+        <p><label>
+            Score:
+            <input type="text" name="score" id="score" required>
+        </label></p>
+        <p>
+            <button>Create</button>
+        </p>
+    </form>
+</div>
+
+<div>
+    number of mines:<input type="text" id="button" value="#, 1-20">
     <button type="button" onclick="enter()">Enter</button>
+</div>
+
 <div class="map-container">
     <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
     <!--row 1-->
@@ -217,36 +250,6 @@ number of mines:<input type="text" id="button" value="#, 1-20">
     <div class="map-blankbutton" id="b61"></div>
     <div class="map-blankbutton" id="b71"></div>
     <div class="map-blankbutton" id="b81"></div>
-</div>
-
-<div>
-    <table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Score</th>
-    </tr>
-    </thead>
-    <tbody id="result">
-        <!-- javascript generated data -->
-    </tbody>
-    </table>
-</div>
-
-<div>
-    <form action="javascript:create_player()">
-        <p><label>
-            name:
-            <input type="text" name="name" id="name" required>
-        </label></p>
-        <p><label>
-            Score:
-            <input type="text" name="score" id="score" required>
-        </label></p>
-        <p>
-            <button>Create</button>
-        </p>
-    </form>
 </div>
 
 <!-- JavaScript (JS) implementation of the map(backend) -->
@@ -460,108 +463,108 @@ read_players();
 
 // Display User Table, data is fetched from Backend Database
 function read_players() {
-// prepare fetch options
-const read_options = {
-    method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'omit', // include, *same-origin, omit
-    headers: {
-    'Content-Type': 'application/json'
-    },
-};
+    // prepare fetch options
+    const read_options = {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'omit', // include, *same-origin, omit
+        headers: {
+        'Content-Type': 'application/json'
+        },
+    };
 
-// fetch the data from API
-fetch(read_fetch, read_options)
-    // response is a RESTful "promise" on any successful fetch
-    .then(response => {
-    // check for response errors
-    if (response.status !== 200) {
-        const errorMsg = 'Database read error: ' + response.status;
-        console.log(errorMsg);
+    // fetch the data from API
+    fetch(read_fetch, read_options)
+        // response is a RESTful "promise" on any successful fetch
+        .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            const errorMsg = 'Database read error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            resultContainer.appendChild(tr);
+            return;
+        }
+        // valid response will have json data
+        response.json().then(data => {
+            console.log(data);
+            for (let row in data) {
+                console.log(data[row]);
+                add_row(data[row]);
+            }
+        })
+    })
+    // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => {
+        console.error(err);
         const tr = document.createElement("tr");
         const td = document.createElement("td");
-        td.innerHTML = errorMsg;
+        td.innerHTML = err;
         tr.appendChild(td);
         resultContainer.appendChild(tr);
-        return;
-    }
-    // valid response will have json data
-    response.json().then(data => {
-        console.log(data);
-        for (let row in data) {
-            console.log(data[row]);
-            add_row(data[row]);
-        }
-    })
-})
-// catch fetch errors (ie ACCESS to server blocked)
-.catch(err => {
-    console.error(err);
-    const tr = document.createElement("tr");
-    const td = document.createElement("td");
-    td.innerHTML = err;
-    tr.appendChild(td);
-    resultContainer.appendChild(tr);
-});
+    });
 }
 
-function create_user(){
-//Validate Password (must be 6-20 characters in len)
-//verifyPassword("click");
-const body = {
-    name: document.getElementById("name").value,
-    score: document.getElementById("score").value,
-};
-const requestOptions = {
-    method: 'POST',
-    body: JSON.stringify(body),
-    headers: {
-        "content-type": "application/json",
-        'Authorization': 'Bearer my-token',
-    },
-};
+function create_player(){
+    //Validate Password (must be 6-20 characters in len)
+    //verifyPassword("click");
+    const body = {
+        name: document.getElementById("name").value,
+        score: document.getElementById("score").value,
+    };
+    const requestOptions = {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            "content-type": "application/json",
+            'Authorization': 'Bearer my-token',
+        },
+    };
 
-// URL for Create API
-// Fetch API call to the database to create a new user
-fetch(create_fetch, requestOptions)
-    .then(response => {
-    // trap error response from Web API
-    if (response.status !== 200) {
-        const errorMsg = 'Database create error: ' + response.status;
-        console.log(errorMsg);
-        const tr = document.createElement("tr");
-        const td = document.createElement("td");
-        td.innerHTML = errorMsg;
-        tr.appendChild(td);
-        resultContainer.appendChild(tr);
-        return;
-    }
-    // response contains valid result
-    response.json().then(data => {
-        console.log(data);
-        //add a table row for the new/created userid
-        add_row(data);
+    // URL for Create API
+    // Fetch API call to the database to create a new user
+    fetch(create_fetch, requestOptions)
+        .then(response => {
+        // trap error response from Web API
+        if (response.status !== 200) {
+            const errorMsg = 'Database create error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            resultContainer.appendChild(tr);
+            return;
+        }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+            //add a table row for the new/created userid
+            add_row(data);
+        })
     })
-})
 }
 
 function add_row(data) {
-const tr = document.createElement("tr");
-const name = document.createElement("td");
-const score = document.createElement("td")
+    const tr = document.createElement("tr");
+    const name = document.createElement("td");
+    const score = document.createElement("td")
 
 
-// obtain data that is specific to the API
-uid.innerHTML = data.uid; 
-name.innerHTML = data.name; 
-score.innerHTML = data.score; 
+    // obtain data that is specific to the API
+    uid.innerHTML = data.uid; 
+    name.innerHTML = data.name; 
+    score.innerHTML = data.score; 
 
-// add HTML to container
-tr.appendChild(name);
-tr.appendChild(score);
+    // add HTML to container
+    tr.appendChild(name);
+    tr.appendChild(score);
 
-resultContainer.appendChild(tr);
+    resultContainer.appendChild(tr);
 }
 
 </script>
