@@ -219,6 +219,17 @@ number of mines:<input type="text" id="button" value="#, 1-20">
     <div class="map-blankbutton" id="b81"></div>
 </div>
 
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Score</th>
+  </tr>
+  </thead>
+  <tbody id="result">
+    <!-- javascript generated data -->
+  </tbody>
+</table>
 
 <!-- JavaScript (JS) implementation of the map(backend) -->
 <script>
