@@ -5,18 +5,18 @@ description:
 ---
 
 <style>
-  table {
-    border-collapse: collapse;
-  }
-  
-  td {
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    vertical-align: middle;
-    border: 1px solid black;
-    font-size: 36px;
-  }
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid black;
+  font-size: 36px;
+}
 </style>
     
 <table id="board">
