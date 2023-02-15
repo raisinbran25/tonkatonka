@@ -82,7 +82,7 @@
 	.score{
 		height: 50px;
 		width: 50px;
-		color: white;
+		color: darkgrey;
 		position: fixed;
 		left: 40vw;
 		margin-top: -50px;
@@ -164,6 +164,7 @@
 			gameState = gameState == 'start' ? 'play' : 'start';
 			if (gameState == 'play') {
 			message.innerHTML = '';
+
 			message.style.left = 42 + 'vw';
 			requestAnimationFrame(() => {
 				dx = Math.floor(Math.random() * 4) + 3;
