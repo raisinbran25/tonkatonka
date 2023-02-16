@@ -17,18 +17,6 @@ description:
     gap: 1px 1px;
 }
 
-.map-bottom { 
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    right: -200px;
-
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 1px 1px;
-}
-
 @media (min-width: 100px) { 
     .map-container {
         width: 50px;
