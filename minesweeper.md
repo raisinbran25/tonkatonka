@@ -525,6 +525,6 @@ const userWinElementTemplate = document.querySelector('template');
 function allowinput() {
     const elementClone = useWinElementTemplate.content.cloneNode(true)   
     const attempt =  elementClone.querySelector('span');
-    userNumberElements.appendChild(attempt);
+    userWinElements.appendChild(attempt);
 }
 </script>
