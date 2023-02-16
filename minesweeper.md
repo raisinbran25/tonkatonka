@@ -111,6 +111,7 @@ description:
     <table>
         <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Score</th>
         </tr>
