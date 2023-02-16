@@ -22,7 +22,6 @@ const resultContainer = document.getElementById("result");
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
 const url = "https://bestgroup.duckdns.org/api/players"
-const create_fetch = url + '/create';
 const read_fetch = url + '/';
 
 // Load users on page entry
