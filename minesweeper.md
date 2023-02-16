@@ -420,7 +420,7 @@ const create_fetch = url + '/create';
 const read_fetch = url + '/';
 
 // Load users on page entry
-read_users();
+read_players();
 
 
 // Display User Table, data is fetched from Backend Database
