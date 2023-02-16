@@ -118,10 +118,6 @@ description:
         Username:
         <input type="text" name="name" id="name" required>
     </label></p>
-    <p><label>
-        Score:
-        <input type="text" name="score" id="score" required>
-    </label></p>
     <p>
         <button>Create</button>
     </p>
@@ -478,7 +474,7 @@ function read_players() {
 function create_player() {
     const body = {
         name: document.getElementById("name").value,
-        score: document.getElementById("score").value,
+        score: String(score()),
     };
     const requestOptions = {
         method: 'POST',
