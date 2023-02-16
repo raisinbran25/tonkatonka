@@ -193,7 +193,7 @@ description:
     <div class="map-blankbutton" id="b81"></div>
 </div>
 
-<div visibility="hidden">
+<div>
     <style>
     .form_style 
         {
