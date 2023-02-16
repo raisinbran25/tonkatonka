@@ -113,7 +113,7 @@ description:
 }
 </style>
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
-<form action="javascript:create_player()">
+<form action="javascript:storeplayer()">
     <p><label>
         Username:
         <input type="text" name="name" id="name" required>
@@ -465,9 +465,13 @@ function read_players() {
     });
 }
 
+function storeplayer() {
+    givename = document.getElementById("name").value
+}
+
 function create_player() {
     const body = {
-        name: document.getElementById("name").value,
+        name: String(givename),
         score: String(score()),
     };
     const requestOptions = {
