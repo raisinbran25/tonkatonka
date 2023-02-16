@@ -20,7 +20,7 @@ description:
     width: 500px;
     height: 500px;
     position: absolute;
-    right: -100px;
+    right: -350px;
 
     display: grid;
     grid-template-columns: repeat(8, 1fr);
