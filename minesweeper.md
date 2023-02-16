@@ -125,6 +125,31 @@ description:
 }
 </style>
 
+<form action="javascript:create_player()">
+    <p><label>
+        Username:
+        <input type="text" name="name" id="name" required>
+    </label></p>
+    <p><label>
+        Score:
+        <input type="text" name="score" id="score" required>
+    </label></p>
+    <p>
+        <button>Create</button>
+    </p>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+    </thead>
+    <tbody id="result">
+        <!-- javascript generated data -->
+    </tbody>
+</table>
+
 <div>
     number of mines:<input type="text" id="button" value="#, 1-20">
     <button type="button" onclick="enter()">Enter</button>
@@ -205,32 +230,6 @@ description:
     <div class="map-blankbutton" id="b71"></div>
     <div class="map-blankbutton" id="b81"></div>
 </div>
-
-
-<form action="javascript:create_player()">
-    <p><label>
-        Username:
-        <input type="text" name="name" id="name" required>
-    </label></p>
-    <p><label>
-        Score:
-        <input type="text" name="score" id="score" required>
-    </label></p>
-    <p>
-        <button>Create</button>
-    </p>
-</form>
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Score</th>
-    </tr>
-    </thead>
-    <tbody id="result">
-        <!-- javascript generated data -->
-    </tbody>
-</table>
 
 <script>
 //user input
