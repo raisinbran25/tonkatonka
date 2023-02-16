@@ -127,10 +127,10 @@ description:
     </template>
 </section>
 
-<div id="choosemines">
+<section id="choosemines">
     choose your number of mines:<input type="text" id="button" value="1-20">
     <button type="button" onclick="enter()">Enter</button>
-</div>
+</section>
 
 <div class="map-container">
     <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
