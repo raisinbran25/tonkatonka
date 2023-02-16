@@ -115,9 +115,7 @@ description:
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
 
 <div>
-    Enter a username:<input type="text" id="store" 
-    value="">
-    <button type="button" onclick="storeplayer()">Enter</button>
+    Enter a username:<input type="text" id="store" value="">
 </div>
 
 <div>
@@ -460,13 +458,9 @@ function read_players() {
     });
 }
 
-function storeplayer() {
-    givename = document.getElementById("store").value
-}
-
 function create_player() {
     const body = {
-        name: String(givename),
+        name: document.getElementById("store").value,
         score: String(score()),
     };
     const requestOptions = {
