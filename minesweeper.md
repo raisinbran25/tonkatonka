@@ -114,7 +114,7 @@ description:
 </style>
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
 <div>
-    enter a username:<input type="text" id="name" value="">
+    enter a username:<input type="text" id="username" value="">
 </div>
 
 <div>
@@ -403,7 +403,7 @@ const create_fetch = url + '/create';
 
 function create_player() {
     const body = {
-        name: String(document.getElementById("name").value),
+        name: document.getElementById("username").value,
         score: String(score()),
     };
     const requestOptions = {
