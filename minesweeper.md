@@ -8,7 +8,8 @@ description:
 .map-container { 
     width: 500px;
     height: 500px;
-    right: 50px;
+    position: absolute;
+    right: 0px;
 
     display: grid;
     grid-template-columns: repeat(8, 1fr);
