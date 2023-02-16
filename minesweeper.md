@@ -127,7 +127,7 @@ description:
     </template>
 </section>
 
-<div>
+<div id="choosemines">
     choose your number of mines:<input type="text" id="button" value="1-20">
     <button type="button" onclick="enter()">Enter</button>
 </div>
@@ -395,6 +395,7 @@ function win() {
     finaltime = Date.now()
     updatetime()
     allowinput()
+    document.getElementById("choosemines").remove()
 }
 function initialize() {
     addcords()
