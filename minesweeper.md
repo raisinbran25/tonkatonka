@@ -491,9 +491,10 @@ function create_player(){
     if (winstatus != true) {
         return
     }
+    uscore = String(score())
     const body = {
         name: document.getElementById("name").value,
-        score: String(score()),
+        score: uscore,
     };
     const requestOptions = {
         method: 'POST',
