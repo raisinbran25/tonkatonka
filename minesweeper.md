@@ -206,34 +206,31 @@ description:
     <div class="map-blankbutton" id="b81"></div>
 </div>
 
-<div class = "map-bottom">
+
+<form action="javascript:create_player()">
+    <p><label>
+        Username:
+        <input type="text" name="name" id="name" required>
+    </label></p>
+    <p><label>
+        Score:
+        <input type="text" name="score" id="score" required>
+    </label></p>
     <p>
-        <form action="javascript:create_player()">
-            <p><label>
-                Username:
-                <input type="text" name="name" id="name" required>
-            </label></p>
-            <p><label>
-                Score:
-                <input type="text" name="score" id="score" required>
-            </label></p>
-            <p>
-                <button>Create</button>
-            </p>
-        </form>
+        <button>Create</button>
     </p>
-    <table>
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Score</th>
-        </tr>
-        </thead>
-        <tbody id="result">
-            <!-- javascript generated data -->
-        </tbody>
-    </table>
-</div>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+    </thead>
+    <tbody id="result">
+        <!-- javascript generated data -->
+    </tbody>
+</table>
 
 <script>
 //user input
