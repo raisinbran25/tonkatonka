@@ -462,8 +462,8 @@ function read_players() {
 
 function create_player() {
     const body = {
-        name: "test1",
-        score: "test2",
+        name: String(document.getElementById("name").value),
+        score: String(score()),
     };
     const requestOptions = {
         method: 'POST',
