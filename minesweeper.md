@@ -210,15 +210,11 @@ description:
     <p>
         <form action="javascript:create_player()">
             <p><label>
-                Name:
+                Username:
                 <input type="text" name="name" id="name" required>
             </label></p>
-            <p><label>
-                Score:
-                <input type="text" name="score" id="score" required>
-            </label></p>
             <p>
-                <button>Create</button>
+                <button>Enter Score</button>
             </p>
         </form>
     </p>
@@ -492,11 +488,12 @@ function read_players() {
 }
 
 function create_player(){
-    //Validate Password (must be 6-20 characters in len)
-    //verifyPassword("click");
+    if (winstatus != true) {
+        return
+    }
     const body = {
         name: document.getElementById("name").value,
-        score: document.getElementById("score").value,
+        score: String(score()),
     };
     const requestOptions = {
         method: 'POST',
