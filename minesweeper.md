@@ -42,6 +42,21 @@ description:
     grid-row: span 1;
 }
 
+.map-container .map-minebutton {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.map-container .map-emptybutton {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.map-container .map-numberbutton {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
 .map-container .map-numberbutton {
     background-color: #D2B48C;
 }
