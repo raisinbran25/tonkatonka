@@ -207,7 +207,7 @@ description:
 </div>
 
 
-<form visibility="hidden" action="javascript:create_player()">
+<form action="javascript:create_player()">
     <p><label>
         Username:
         <input type="text" name="name" id="name" required>
