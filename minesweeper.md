@@ -408,8 +408,8 @@ const create_fetch = url + '/create';
 
 function create_player() {
     const body = {
-        name: "test3",
-        score: "test4",
+        name: String(document.getElementById("name").value),
+        score: String(score()),
     };
     const requestOptions = {
         method: 'POST',
@@ -430,6 +430,10 @@ function create_player() {
             document.getElementById("reset") = errorMsg
             return;
         }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+        })
     })
 }
 </script>
