@@ -112,7 +112,7 @@ description:
     background-color: #373737;
 }
 </style>
-[View the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
+[Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
 <form action="javascript:create_player()">
     <p><label>
         Username:
