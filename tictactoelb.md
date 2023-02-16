@@ -1,5 +1,5 @@
 ---
-title: Minesweeper Leaderboards
+title: TicTacToe Leaderboard
 layout: default
 description: 
 ---
@@ -114,7 +114,7 @@ description:
 </style>
 
 <h1>
-    Welcome to the Minesweeper Leaderboards!
+    Welcome to the TicTacToe Leaderboards!
 </h1>
 Scores are calculated using number of mines and time to complete.
 <table>
