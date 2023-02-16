@@ -408,8 +408,8 @@ const create_fetch = url + '/create';
 
 function create_player() {
     const body = {
-        name: String(document.getElementById("name").value),
-        score: String(score()),
+        name: "test3",
+        score: "test4",
     };
     const requestOptions = {
         method: 'POST',
