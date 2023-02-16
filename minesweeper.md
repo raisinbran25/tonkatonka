@@ -6,14 +6,28 @@ description:
 
 <style>
 .map-container { 
-    width: 500px;
-    height: 500px;
-    right: 50px;
-
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
     gap: 1px 1px;
+}
+
+.map-container div {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    background-color: #90EE90;
+    border: 0px solid black;
+    font-size: 1.5fem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0s; 
+}
+
+.map-container .map-longbutton {
+    grid-column: 1 / 9;
+    grid-row: 1 / 3;
 }
 
 .map-blankbutton {
