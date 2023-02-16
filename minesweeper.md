@@ -118,18 +118,14 @@ description:
         Username:
         <input type="text" name="name" id="name" required>
     </label></p>
-    <p>
-        <button>Enter</button>
-    </p>
+    <button>Enter</button>
 </form>
 
-<p>
+<div>
     choose your number of mines:<input type="text" id="button" 
     value="1-20">
-</p>
-<p>
     <button type="button" onclick="enter()">Enter</button>
-</p>
+</div>
 
 <div class="map-container">
     <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
