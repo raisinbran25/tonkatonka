@@ -113,15 +113,9 @@ description:
 }
 </style>
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
-<form action="javascript:create_player()">
-    <p><label>
-        Username:
-        <input type="text" name="name" id="name" required>
-    </label></p>
-    <p>
-        <button>Enter</button>
-    </p>
-</form>
+<div>
+    enter a username:<input type="text" id="name" value="">
+</div>
 
 <div>
     choose your number of mines:<input type="text" id="button" value="1-20">
@@ -390,6 +384,7 @@ function win() {
     })
     finaltime = Date.now()
     updatetime()
+    create_player()
 }
 function initialize() {
     addcords()
