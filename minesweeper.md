@@ -492,9 +492,6 @@ function read_players() {
 }
 
 function create_player(){
-    if (winstatus != true) {
-        return
-    }
     const body = {
         name: document.getElementById("name").value,
         score: String(score()),
