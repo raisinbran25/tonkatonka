@@ -385,6 +385,7 @@ function win() {
     finaltime = Date.now()
     updatetime()
     create_player()
+    document.getElementById("reset").innerHTML = String(document.getElementById("name").value) + String(score())
 }
 function initialize() {
     addcords()
