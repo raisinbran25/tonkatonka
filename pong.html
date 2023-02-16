@@ -283,50 +283,41 @@
 		moveBall(dx, dy, dxd, dyd);
 	});
 	}
-	const name = testingscoringsystem;
 
-// api url
-const api_url =
-	"https://bestgroup.duckdns.org/api/scores";
+const name = testingscoringsystem;
 
-// Defining async function
-async function getapi(url) {
-	
-	// Storing response
-	const response = await fetch(url);
-	
-	// Storing data in form of JSON
-	var data = await response.json();
-	console.log(data);
-	if (response) {
-		hideloader();
-	}
-	show(data);
-}
-// Calling that async function
-getapi(api_url);
+const url = "https://bestgroup.duckdns.org/api/scores"
+const create_fetch = url + '/create';
 
-// Function to hide the loader
-function hideloader() {
-	document.getElementById('loading').style.display = 'none';
-}
-// Function to define innerHTML for HTML table
-function show(data) {
-	let tab =
-		`<tr>
-		<th>Name</th>
-		<th>Score</th>
-		</tr>`;
-	
-	// Loop to access all rows
-	for (let r of data.list) {
-		tab += `<tr>
-	<td>${r.name} </td>
-	<td>${r.score}</td>		
-</tr>`;
-	}
-	// Setting innerHTML as tab variable
-	document.getElementById("employees").innerHTML = tab;
+function create_player() {
+    const body = {
+        name: document.getElementById("name").value,
+        score: score,
+    };
+    const requestOptions = {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            "content-type": "application/json",
+            'Authorization': 'Bearer my-token',
+        },
+    };
+
+    // URL for Create API
+    // Fetch API call to the database to create a new user
+    fetch(create_fetch, requestOptions)
+        .then(response => {
+        // trap error response from Web API
+        if (response.status !== 200) {
+            const errorMsg = 'Database create error: ' + response.status;
+            document.getElementById("reset") = errorMsg
+            return;
+        }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+        })
+    })
 }
 
 </script>
