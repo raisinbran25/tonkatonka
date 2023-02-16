@@ -208,13 +208,13 @@ description:
 
 <div class = "map-bottom">
     <p>
-        <form action="javascript:create_player()">
+        <form>
             <p><label>
                 Username:
                 <input type="text" name="name" id="name" required>
             </label></p>
             <p>
-                <button>Enter Score</button>
+                <button onclick="create_player()">Enter Score</button>
             </p>
         </form>
     </p>
