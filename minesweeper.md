@@ -5,32 +5,17 @@ description:
 ---
 
 <style>
-/* class to create the map's container; uses CSS grid dsiplay to partition off buttons */
 .map-container { 
-    width: 500px; /* this width and height is specified for mobile devices by default */
+    width: 500px;
     height: 500px;
     right: 50px;
 
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
     gap: 1px 1px;
 }
 
-/* 
-    CSS allows programmers to use media queries to change the size of classes based on the size of the device.
-    This allows us to make it so that our website looks good on both mobile and desktop. If the width of the
-    device is big enough, then the map will take up more of the screen.
-*/
-@media (min-width: 100px) { 
-    .map-container {
-        width: 50px;
-        height: 50px;
-        left: 20px
-    }
-}
-
-/* styling for the map buttons themselves */
 .map-blankbutton {
     width: 40px;
     height: 40px;
@@ -42,12 +27,8 @@ description:
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -62,12 +43,8 @@ description:
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -82,12 +59,8 @@ description:
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -102,12 +75,8 @@ description:
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -122,16 +91,11 @@ description:
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 8;
     grid-row: span 2;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
-/* darkens the background color on hover to create a selecting effect */
 .map-blankbutton:hover {
     background-color: #373737;
 }
