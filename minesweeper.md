@@ -512,12 +512,4 @@ function add_row(data) {
 
     resultContainer.appendChild(tr);
 }
-
-const userWinElements = document.querySelector('#attempts');
-const userWinElementTemplate = document.querySelector('template');
-function allowinput() {
-    const elementClone = useWinElementTemplate.content.cloneNode(true)   
-    const attempt =  elementClone.querySelector('span');
-    userWinElements.appendChild(attempt);
-}
 </script>
