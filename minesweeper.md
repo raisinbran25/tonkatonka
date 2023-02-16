@@ -427,20 +427,9 @@ function create_player() {
         // trap error response from Web API
         if (response.status !== 200) {
             const errorMsg = 'Database create error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            resultContainer.appendChild(tr);
+            document.getElementById("reset") = errorMsg
             return;
         }
-        // response contains valid result
-        response.json().then(data => {
-            console.log(data);
-            //add a table row for the new/created userid
-
-        })
     })
 }
 </script>
