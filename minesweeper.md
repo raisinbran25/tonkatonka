@@ -475,10 +475,10 @@ function read_players() {
     });
 }
 
-function create_player(){
+function create_player() {
     const body = {
         name: document.getElementById("name").value,
-        score: String(score()),
+        score: document.getElementById("score").value,
     };
     const requestOptions = {
         method: 'POST',
