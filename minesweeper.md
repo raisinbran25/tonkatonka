@@ -114,10 +114,10 @@ description:
 </style>
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
 <form action="javascript:storeplayer()">
-    <p><label>
+    <label>
         Username:
         <input type="text" name="name" id="name" required>
-    </label></p>
+    </label>
     <button>Enter</button>
 </form>
 
