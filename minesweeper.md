@@ -124,7 +124,7 @@ description:
 </form>
 
 <div>
-    number of mines:<input type="text" id="button" value="#, 1-20">
+    choose your number of mines:<input type="text" id="button" value="1-20">
     <button type="button" onclick="enter()">Enter</button>
 </div>
 
