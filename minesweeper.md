@@ -16,17 +16,6 @@ description:
     gap: 1px 1px;
 }
 
-.map-bottom { 
-    width: 500px;
-    height: 500px;
-    right: 50px;
-
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 1px 1px;
-}
-
 @media (min-width: 100px) { 
     .map-container {
         width: 50px;
@@ -204,7 +193,14 @@ description:
     <div class="map-blankbutton" id="b81"></div>
 </div>
 
-<div class="map-bottom" visibility="hidden">
+<div visibility="hidden">
+    <style>
+    .form_style 
+        {
+        position: absolute;
+        right: 0;
+    }
+    </style>
     <table>
         <thead>
         <tr>
