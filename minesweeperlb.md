@@ -113,7 +113,10 @@ description:
 }
 </style>
 
-Welcome to the Minesweeper Leaderboards!
+<h1>
+    Welcome to the Minesweeper Leaderboards!
+</h1>
+Scores are calculated using number of mines and time to complete.
 <table>
     <thead>
     <tr>
