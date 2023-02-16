@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<title>
+<head>
+<form action="submit.php" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required>
+    
+    <label for="input-text">Input Text:</label>
+    <textarea name="input-text" id="input-text" required></textarea>
+    
+    <button type="submit">Submit</button>
+  </form>
+  
+  <form action="edit.php" method="POST">
+    <label for="edit-username">Edit Username:</label>
+    <input type="text" name="edit-username" id="edit-username" required>
+    
+    <label for="edit-text">Edit Text:</label>
+    <textarea name="edit-text" id="edit-text" required></textarea>
+    
+    <button type="submit">Edit</button>
+  </form>
+  
+  <form action="delete.php" method="POST">
+    <label for="delete-username">Delete Username:</label>
+    <input type="text" name="delete-username" id="delete-username" required>
+    
+    <button type="submit">Delete</button>
+  </form>
+
+  <h1>User Inputs:</h1>
+<?php include 'display.php'; ?>

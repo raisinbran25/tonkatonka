@@ -1,22 +1,22 @@
-<!-- Style (CSS) implementation of the map. -->
+---
+title: Minesweeper
+layout: default
+description: 
+---
+
 <style>
-/* class to create the map's container; uses CSS grid dsiplay to partition off buttons */
 .map-container { 
-    width: 500px; /* this width and height is specified for mobile devices by default */
+    width: 500px;
     height: 500px;
-    right: 50px;
+    position: absolute;
+    right: 0px;
 
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
     gap: 1px 1px;
 }
 
-/* 
-    CSS allows programmers to use media queries to change the size of classes based on the size of the device.
-    This allows us to make it so that our website looks good on both mobile and desktop. If the width of the
-    device is big enough, then the map will take up more of the screen.
-*/
 @media (min-width: 100px) { 
     .map-container {
         width: 50px;
@@ -25,7 +25,6 @@
     }
 }
 
-/* styling for the map buttons themselves */
 .map-blankbutton {
     width: 40px;
     height: 40px;
@@ -37,12 +36,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -57,12 +52,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -77,12 +68,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -97,12 +84,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
@@ -117,16 +100,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 8;
     grid-row: span 2;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0s; 
 }
 
-/* darkens the background color on hover to create a selecting effect */
 .map-blankbutton:hover {
     background-color: #373737;
 }
@@ -134,15 +112,16 @@
     background-color: #373737;
 }
 </style>
+[Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
+<div>
+    enter a username:<input type="text" id="name" value="">
+</div>
 
-
-<!-- HTML implementation of the map. 
-    CSS sets 4 buttons (map-blankbutton) to a row
-    All buttons have onclick JavaScript action
-    All actions result in map-output.innerHTML change
--->
-number of mines:<input type="text" id="button" value="#, 1-20">
+<div>
+    choose your number of mines:<input type="text" id="button" value="2-20">
     <button type="button" onclick="enter()">Enter</button>
+</div>
+
 <div class="map-container">
     <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
     <!--row 1-->
@@ -219,14 +198,12 @@ number of mines:<input type="text" id="button" value="#, 1-20">
     <div class="map-blankbutton" id="b81"></div>
 </div>
 
-
-<!-- JavaScript (JS) implementation of the map(backend) -->
 <script>
 //user input
 numines = null
 function enter() {
     input = document.getElementById("button").value
-    if (input > 0 && input < 21) {
+    if (input > 1 && input < 21) {
         numines = input
     }
 }
@@ -407,6 +384,7 @@ function win() {
     })
     finaltime = Date.now()
     updatetime()
+    create_player()
 }
 function initialize() {
     addcords()
@@ -414,5 +392,43 @@ function initialize() {
     calcmines()
     play()
      
+     
+}
+
+
+// prepare URL's to allow easy switch from deployment and localhost
+//const url = "http://localhost:8086/api/users"
+const url = "https://bestgroup.duckdns.org/api/players"
+const create_fetch = url + '/create';
+
+function create_player() {
+    const body = {
+        name: String(document.getElementById("name").value),
+        score: String(score()),
+    };
+    const requestOptions = {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            "content-type": "application/json",
+            'Authorization': 'Bearer my-token',
+        },
+    };
+
+    // URL for Create API
+    // Fetch API call to the database to create a new user
+    fetch(create_fetch, requestOptions)
+        .then(response => {
+        // trap error response from Web API
+        if (response.status !== 200) {
+            const errorMsg = 'Database create error: ' + response.status;
+            document.getElementById("reset") = errorMsg
+            return;
+        }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+        })
+    })
 }
 </script>
