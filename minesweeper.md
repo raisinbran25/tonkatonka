@@ -119,7 +119,6 @@ description:
 
 <div>
     choose your number of mines:<input type="text" id="button" value="2-20">
-    <button type="button" onclick="enter()">Enter</button>
 </div>
 
 <div class="map-container">
@@ -387,12 +386,11 @@ function win() {
     create_player()
 }
 function initialize() {
+    enter()
     addcords()
     placemines()
     calcmines()
     play()
-     
-     
 }
 
 
