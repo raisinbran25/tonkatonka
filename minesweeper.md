@@ -118,7 +118,7 @@ description:
 </div>
 
 <div>
-    choose your number of mines:<input type="text" id="button" value="1-20">
+    choose your number of mines:<input type="text" id="button" value="2-20">
     <button type="button" onclick="enter()">Enter</button>
 </div>
 
@@ -203,7 +203,7 @@ description:
 numines = null
 function enter() {
     input = document.getElementById("button").value
-    if (input > 0 && input < 21) {
+    if (input > 1 && input < 21) {
         numines = input
     }
 }
