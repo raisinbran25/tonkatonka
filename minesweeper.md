@@ -206,6 +206,21 @@ description:
 </div>
 
 <div class = "map-bottom">
+    <p>
+        <form action="javascript:create_player()">
+            <p><label>
+                Name:
+                <input type="text" name="name" id="name" required>
+            </label></p>
+            <p><label>
+                Score:
+                <input type="text" name="score" id="score" required>
+            </label></p>
+            <p>
+                <button>Create</button>
+            </p>
+        </form>
+    </p>
     <table>
         <thead>
         <tr>
@@ -217,19 +232,6 @@ description:
             <!-- javascript generated data -->
         </tbody>
     </table>
-    <form action="javascript:create_player()">
-        <p><label>
-            Name:
-            <input type="text" name="name" id="name" required>
-        </label></p>
-        <p><label>
-            Score:
-            <input type="text" name="score" id="score" required>
-        </label></p>
-        <p>
-            <button>Create</button>
-        </p>
-    </form>
 </div>
 
 <script>
