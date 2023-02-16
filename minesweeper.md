@@ -21,7 +21,7 @@ description:
     width: 500px;
     height: 500px;
     position: absolute;
-    right: -275px;
+    right: -200px;
 
     display: grid;
     grid-template-columns: repeat(8, 1fr);
