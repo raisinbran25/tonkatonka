@@ -113,15 +113,19 @@ description:
 }
 </style>
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
-<form action="javascript:create_player()">
-    <p><label>
-        Username:
-        <input type="text" name="name" id="name" required>
-    </label></p>
-    <p>
-        <button>Enter</button>
-    </p>
-</form>
+<section id="wininput">
+    <template>
+        <form action="javascript:create_player()">
+            <p><label>
+                Username:
+                <input type="text" name="name" id="name" required>
+            </label></p>
+            <p>
+                <button>Enter</button>
+            </p>
+        </form>
+    </template>
+</section>
 
 <div>
     choose your number of mines:<input type="text" id="button" value="1-20">
@@ -390,6 +394,7 @@ function win() {
     })
     finaltime = Date.now()
     updatetime()
+    allowinput()
 }
 function initialize() {
     addcords()
@@ -513,5 +518,13 @@ function add_row(data) {
     tr.appendChild(score);
 
     resultContainer.appendChild(tr);
+}
+
+const userWinElements = document.querySelector('#attempts');
+const userWinElementTemplate = document.querySelector('template');
+function allowinput() {
+    const elementClone = useWinElementTemplate.content.cloneNode(true)   
+    const attempt =  elementClone.querySelector('span');
+    userNumberElements.appendChild(attempt);
 }
 </script>
