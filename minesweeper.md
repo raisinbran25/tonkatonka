@@ -384,7 +384,7 @@ function win() {
     })
     finaltime = Date.now()
     updatetime()
-    create_player()
+    create_sewer()
 }
 function initialize() {
     addcords()
@@ -398,10 +398,10 @@ function initialize() {
 
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
-const url = "https://bestgroup.duckdns.org/api/players"
+const url = "https://bestgroup.duckdns.org/api/sewers"
 const create_fetch = url + '/create';
 
-function create_player() {
+function create_sewer() {
     const body = {
         name: String(document.getElementById("name").value),
         score: String(score()),
