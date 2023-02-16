@@ -26,8 +26,8 @@ description:
 }
 
 .map-container .map-longbutton {
-    grid-column: 1 / 9;
-    grid-row: 1 / 3;
+    grid-column: 1/9;
+    grid-row: 1/3;
 }
 
 .map-blankbutton {
