@@ -460,7 +460,7 @@ function read_players() {
 
 function create_player() {
     const body = {
-        name: document.getElementById("store").value,
+        name: String(document.getElementById("store").value),
         score: String(score()),
     };
     const requestOptions = {
@@ -490,26 +490,7 @@ function create_player() {
         // response contains valid result
         response.json().then(data => {
             console.log(data);
-            //add a table row for the new/created userid
-            add_row(data);
         })
     })
-}
-
-function add_row(data) {
-    const tr = document.createElement("tr");
-    const name = document.createElement("td");
-    const score = document.createElement("td");
-
-
-    // obtain data that is specific to the API
-    name.innerHTML = data.name; 
-    score.innerHTML = data.score; 
-
-    // add HTML to container
-    tr.appendChild(name);
-    tr.appendChild(score);
-
-    resultContainer.appendChild(tr);
 }
 </script>
