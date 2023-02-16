@@ -403,7 +403,7 @@ const create_fetch = url + '/create';
 
 function create_player() {
     const body = {
-        name: document.getElementById("username"),
+        name: document.getElementById("username").value,
         score: String(score()),
     };
     const requestOptions = {
