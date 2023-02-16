@@ -107,12 +107,11 @@ description:
 }
 </style>
 
+<div>
+    number of mines:<input type="text" id="button" value="#, 1-20">
+    <button type="button" onclick="enter()">Enter</button>
+</div>
 <p>
-    <div>
-        number of mines:<input type="text" id="button" value="#, 1-20">
-        <button type="button" onclick="enter()">Enter</button>
-    </div>
-
     <div class="map-container">
         <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
         <!--row 1-->
