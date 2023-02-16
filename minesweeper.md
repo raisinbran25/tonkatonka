@@ -6,70 +6,108 @@ description:
 
 <style>
 .map-container { 
+    width: 500px;
+    height: 500px;
+    right: 50px;
+
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
     gap: 1px 1px;
 }
 
-@media (max-width: 100px) { 
+@media (min-width: 100px) { 
     .map-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(20, 1fr);
+        width: 50px;
+        height: 50px;
+        left: 20px
     }
 }
 
-.map-container div {
-    width: 100%;
-    height: 100%;
+.map-blankbutton {
+    width: 40px;
+    height: 40px;
     border-radius: 0px;
     background-color: #90EE90;
     border: 0px solid black;
     font-size: 1.5fem;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    grid-column: span 1;
+    grid-row: span 1;
     transition: all 0s; 
 }
 
-.map-container .map-longbutton {
-    grid-column: 1 / 9;
-    grid-row: 1 / 3;
-}
-
-.map-container .map-blankbutton {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.map-container .map-minebutton {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.map-container .map-emptybutton {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.map-container .map-numberbutton {
-    grid-column: span 1;
-    grid-row: span 1;
-}
-
-.map-container .map-numberbutton {
+.map-zerobutton {
+    width: 40px;
+    height: 40px;
+    border-radius: 0px;
     background-color: #D2B48C;
+    border: 0px solid black;
+    font-size: 1.5fem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 1;
+    grid-row: span 1;
+    transition: all 0s; 
 }
 
-.map-container .map-minebutton {
+.map-minebutton {
+    width: 40px;
+    height: 40px;
+    border-radius: 0px;
     background-color: #AA4A44;
+    border: 0px solid black;
+    font-size: 1.5fem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 1;
+    grid-row: span 1;
+    transition: all 0s; 
 }
 
-.map-container .map-blankbutton:hover {
+.map-numberbutton {
+    width: 40px;
+    height: 40px;
+    border-radius: 0px;
+    background-color: #D2B48C;
+    border: 0px solid black;
+    font-size: 1.5fem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 1;
+    grid-row: span 1;
+    transition: all 0s; 
+}
+
+.map-longbutton {
+    width: 328px;
+    height: 80px;
+    border-radius: 0px;
+    background-color: #808080;
+    border: 0px solid black;
+    font-size: 1.5fem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: span 8;
+    grid-row: span 2;
+    transition: all 0s; 
+}
+
+.map-blankbutton:hover {
     background-color: #373737;
 }
-
-.map-container .map-longbutton:hover {
+.map-longbutton:hover {
     background-color: #373737;
 }
 </style>
