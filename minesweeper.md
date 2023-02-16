@@ -188,7 +188,7 @@ description:
     <div class="map-blankbutton" id="b81"></div>
 </div>
 
-<div id="bottom" visibility="hidden">
+<p id="bottom" visibility="hidden">
     <table>
         <thead>
         <tr>
@@ -213,7 +213,7 @@ description:
             <button>Create</button>
         </p>
     </form>
-</div>
+</p>
 
 <script>
 //user input
