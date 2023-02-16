@@ -208,13 +208,17 @@ description:
 
 <div class = "map-bottom">
     <p>
-        <form>
+        <form action="javascript:create_player()">
             <p><label>
                 Username:
                 <input type="text" name="name" id="name" required>
             </label></p>
+            <p><label>
+                Score:
+                <input type="text" name="score" id="score" required>
+            </label></p>
             <p>
-                <button onclick="create_player()">Enter Score</button>
+                <button>Create</button>
             </p>
         </form>
     </p>
@@ -491,10 +495,9 @@ function create_player(){
     if (winstatus != true) {
         return
     }
-    uscore = String(score())
     const body = {
         name: document.getElementById("name").value,
-        score: uscore,
+        score: String(score()),
     };
     const requestOptions = {
         method: 'POST',
