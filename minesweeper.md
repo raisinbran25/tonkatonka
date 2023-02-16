@@ -113,24 +113,23 @@ description:
 }
 </style>
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
-<section id="wininput">
-    <template>
-        <form action="javascript:create_player()">
-            <p><label>
-                Username:
-                <input type="text" name="name" id="name" required>
-            </label></p>
-            <p>
-                <button>Enter</button>
-            </p>
-        </form>
-    </template>
-</section>
+<form action="javascript:create_player()">
+    <p><label>
+        Username:
+        <input type="text" name="name" id="name" required>
+    </label></p>
+    <p>
+        <button>Enter</button>
+    </p>
+</form>
 
-<section id="choosemines">
-    choose your number of mines:<input type="text" id="button" value="1-20">
+<p>
+    choose your number of mines:<input type="text" id="button" 
+    value="1-20">
+</p>
+<p>
     <button type="button" onclick="enter()">Enter</button>
-</section>
+</p>
 
 <div class="map-container">
     <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
