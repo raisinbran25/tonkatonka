@@ -112,27 +112,16 @@ description:
     background-color: #373737;
 }
 </style>
-
+[View the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
 <form action="javascript:create_player()">
     <p><label>
         Username:
         <input type="text" name="name" id="name" required>
     </label></p>
     <p>
-        <button>Create</button>
+        <button>Enter</button>
     </p>
 </form>
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Score</th>
-    </tr>
-    </thead>
-    <tbody id="result">
-        <!-- javascript generated data -->
-    </tbody>
-</table>
 
 <div>
     number of mines:<input type="text" id="button" value="#, 1-20">

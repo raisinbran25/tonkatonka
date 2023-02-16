@@ -113,6 +113,7 @@ description:
 }
 </style>
 
+Welcome to the Minesweeper Leaderboards!
 <table>
     <thead>
     <tr>
