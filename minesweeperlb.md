@@ -113,15 +113,6 @@ description:
 }
 </style>
 
-<form action="javascript:create_player()">
-    <p><label>
-        Username:
-        <input type="text" name="name" id="name" required>
-    </label></p>
-    <p>
-        <button>Create</button>
-    </p>
-</form>
 <table>
     <thead>
     <tr>
