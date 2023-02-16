@@ -118,7 +118,7 @@ description:
 </div>
 
 <div>
-    choose your number of mines:<input type="text" id="button" value="2-20">
+    choose your number of mines:<input type="text" id="button" value="1-20">
     <button type="button" onclick="enter()">Enter</button>
 </div>
 
@@ -384,7 +384,7 @@ function win() {
     })
     finaltime = Date.now()
     updatetime()
-    create_sewer()
+    create_player()
 }
 function initialize() {
     addcords()
@@ -398,10 +398,10 @@ function initialize() {
 
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
-const url = "https://bestgroup.duckdns.org/api/sewers"
+const url = "https://bestgroup.duckdns.org/api/players"
 const create_fetch = url + '/create';
 
-function create_sewer() {
+function create_player() {
     const body = {
         name: String(document.getElementById("name").value),
         score: String(score()),
