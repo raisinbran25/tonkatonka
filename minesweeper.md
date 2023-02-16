@@ -113,17 +113,16 @@ description:
 }
 </style>
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
-<form action="javascript:storeplayer()">
-    <label>
-        Username:
-        <input type="text" name="name" id="name" required>
-    </label>
-    <button>Enter</button>
-</form>
 
 <div>
-    choose your number of mines:<input type="text" id="button" 
-    value="1-20">
+    Enter a username:<input type="text" id="store" 
+    value="">
+    <button type="button" onclick="storeplayer()">Enter</button>
+</div>
+
+<div>
+    choose your number of mines, 1-20:<input type="text" id="button" 
+    value="">
     <button type="button" onclick="enter()">Enter</button>
 </div>
 
@@ -462,7 +461,7 @@ function read_players() {
 }
 
 function storeplayer() {
-    givename = document.getElementById("name").value
+    givename = document.getElementById("store").value
 }
 
 function create_player() {
