@@ -6,9 +6,8 @@ description:
 
 <style>
 .map-container { 
-    width: 500px;
-    height: 500px;
-    right: 50px;
+    width: 100%;
+    height: 100%;
 
     display: grid;
     grid-template-columns: repeat(8, 1fr);
