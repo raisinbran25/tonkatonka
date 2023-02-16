@@ -16,6 +16,14 @@ description:
     gap: 1px 1px;
 }
 
+@media (min-width: 100px) { 
+    .map-container {
+        width: 50px;
+        height: 50px;
+        left: 20px
+    }
+}
+
 .map-blankbutton {
     width: 40px;
     height: 40px;
