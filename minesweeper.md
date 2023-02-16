@@ -111,85 +111,84 @@ description:
     number of mines:<input type="text" id="button" value="#, 1-20">
     <button type="button" onclick="enter()">Enter</button>
 </div>
-<p>
-    <div class="map-container">
-        <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
-        <!--row 1-->
-        <div class="map-blankbutton" id="b18"></div>
-        <div class="map-blankbutton" id="b28"></div>
-        <div class="map-blankbutton" id="b38"></div>
-        <div class="map-blankbutton" id="b48"></div>
-        <div class="map-blankbutton" id="b58"></div>
-        <div class="map-blankbutton" id="b68"></div>
-        <div class="map-blankbutton" id="b78"></div>
-        <div class="map-blankbutton" id="b88"></div>
-        <!--row 2-->
-        <div class="map-blankbutton" id="b17"></div>
-        <div class="map-blankbutton" id="b27"></div>
-        <div class="map-blankbutton" id="b37"></div>
-        <div class="map-blankbutton" id="b47"></div>
-        <div class="map-blankbutton" id="b57"></div>
-        <div class="map-blankbutton" id="b67"></div>
-        <div class="map-blankbutton" id="b77"></div>
-        <div class="map-blankbutton" id="b87"></div>
-        <!--row 3-->
-        <div class="map-blankbutton" id="b16"></div>
-        <div class="map-blankbutton" id="b26"></div>
-        <div class="map-blankbutton" id="b36"></div>
-        <div class="map-blankbutton" id="b46"></div>
-        <div class="map-blankbutton" id="b56"></div>
-        <div class="map-blankbutton" id="b66"></div>
-        <div class="map-blankbutton" id="b76"></div>
-        <div class="map-blankbutton" id="b86"></div>
-        <!--row 4-->
-        <div class="map-blankbutton" id="b15"></div>
-        <div class="map-blankbutton" id="b25"></div>
-        <div class="map-blankbutton" id="b35"></div>
-        <div class="map-blankbutton" id="b45"></div>
-        <div class="map-blankbutton" id="b55"></div>
-        <div class="map-blankbutton" id="b65"></div>
-        <div class="map-blankbutton" id="b75"></div>
-        <div class="map-blankbutton" id="b85"></div>
-        <!--row 5-->
-        <div class="map-blankbutton" id="b14"></div>
-        <div class="map-blankbutton" id="b24"></div>
-        <div class="map-blankbutton" id="b34"></div>
-        <div class="map-blankbutton" id="b44"></div>
-        <div class="map-blankbutton" id="b54"></div>
-        <div class="map-blankbutton" id="b64"></div>
-        <div class="map-blankbutton" id="b74"></div>
-        <div class="map-blankbutton" id="b84"></div>
-        <!--row 6-->
-        <div class="map-blankbutton" id="b13"></div>
-        <div class="map-blankbutton" id="b23"></div>
-        <div class="map-blankbutton" id="b33"></div>
-        <div class="map-blankbutton" id="b43"></div>
-        <div class="map-blankbutton" id="b53"></div>
-        <div class="map-blankbutton" id="b63"></div>
-        <div class="map-blankbutton" id="b73"></div>
-        <div class="map-blankbutton" id="b83"></div>
-        <!--row 7-->
-        <div class="map-blankbutton" id="b12"></div>
-        <div class="map-blankbutton" id="b22"></div>
-        <div class="map-blankbutton" id="b32"></div>
-        <div class="map-blankbutton" id="b42"></div>
-        <div class="map-blankbutton" id="b52"></div>
-        <div class="map-blankbutton" id="b62"></div>
-        <div class="map-blankbutton" id="b72"></div>
-        <div class="map-blankbutton" id="b82"></div>
-        <!--row 8-->
-        <div class="map-blankbutton" id="b11"></div>
-        <div class="map-blankbutton" id="b21"></div>
-        <div class="map-blankbutton" id="b31"></div>
-        <div class="map-blankbutton" id="b41"></div>
-        <div class="map-blankbutton" id="b51"></div>
-        <div class="map-blankbutton" id="b61"></div>
-        <div class="map-blankbutton" id="b71"></div>
-        <div class="map-blankbutton" id="b81"></div>
-    </div>
-</p>
 
-<p id="bottom" visibility="hidden">
+<div class="map-container">
+    <div class="map-longbutton" id="reset" onclick="initialize()">click here to play!</div>
+    <!--row 1-->
+    <div class="map-blankbutton" id="b18"></div>
+    <div class="map-blankbutton" id="b28"></div>
+    <div class="map-blankbutton" id="b38"></div>
+    <div class="map-blankbutton" id="b48"></div>
+    <div class="map-blankbutton" id="b58"></div>
+    <div class="map-blankbutton" id="b68"></div>
+    <div class="map-blankbutton" id="b78"></div>
+    <div class="map-blankbutton" id="b88"></div>
+    <!--row 2-->
+    <div class="map-blankbutton" id="b17"></div>
+    <div class="map-blankbutton" id="b27"></div>
+    <div class="map-blankbutton" id="b37"></div>
+    <div class="map-blankbutton" id="b47"></div>
+    <div class="map-blankbutton" id="b57"></div>
+    <div class="map-blankbutton" id="b67"></div>
+    <div class="map-blankbutton" id="b77"></div>
+    <div class="map-blankbutton" id="b87"></div>
+    <!--row 3-->
+    <div class="map-blankbutton" id="b16"></div>
+    <div class="map-blankbutton" id="b26"></div>
+    <div class="map-blankbutton" id="b36"></div>
+    <div class="map-blankbutton" id="b46"></div>
+    <div class="map-blankbutton" id="b56"></div>
+    <div class="map-blankbutton" id="b66"></div>
+    <div class="map-blankbutton" id="b76"></div>
+    <div class="map-blankbutton" id="b86"></div>
+    <!--row 4-->
+    <div class="map-blankbutton" id="b15"></div>
+    <div class="map-blankbutton" id="b25"></div>
+    <div class="map-blankbutton" id="b35"></div>
+    <div class="map-blankbutton" id="b45"></div>
+    <div class="map-blankbutton" id="b55"></div>
+    <div class="map-blankbutton" id="b65"></div>
+    <div class="map-blankbutton" id="b75"></div>
+    <div class="map-blankbutton" id="b85"></div>
+    <!--row 5-->
+    <div class="map-blankbutton" id="b14"></div>
+    <div class="map-blankbutton" id="b24"></div>
+    <div class="map-blankbutton" id="b34"></div>
+    <div class="map-blankbutton" id="b44"></div>
+    <div class="map-blankbutton" id="b54"></div>
+    <div class="map-blankbutton" id="b64"></div>
+    <div class="map-blankbutton" id="b74"></div>
+    <div class="map-blankbutton" id="b84"></div>
+    <!--row 6-->
+    <div class="map-blankbutton" id="b13"></div>
+    <div class="map-blankbutton" id="b23"></div>
+    <div class="map-blankbutton" id="b33"></div>
+    <div class="map-blankbutton" id="b43"></div>
+    <div class="map-blankbutton" id="b53"></div>
+    <div class="map-blankbutton" id="b63"></div>
+    <div class="map-blankbutton" id="b73"></div>
+    <div class="map-blankbutton" id="b83"></div>
+    <!--row 7-->
+    <div class="map-blankbutton" id="b12"></div>
+    <div class="map-blankbutton" id="b22"></div>
+    <div class="map-blankbutton" id="b32"></div>
+    <div class="map-blankbutton" id="b42"></div>
+    <div class="map-blankbutton" id="b52"></div>
+    <div class="map-blankbutton" id="b62"></div>
+    <div class="map-blankbutton" id="b72"></div>
+    <div class="map-blankbutton" id="b82"></div>
+    <!--row 8-->
+    <div class="map-blankbutton" id="b11"></div>
+    <div class="map-blankbutton" id="b21"></div>
+    <div class="map-blankbutton" id="b31"></div>
+    <div class="map-blankbutton" id="b41"></div>
+    <div class="map-blankbutton" id="b51"></div>
+    <div class="map-blankbutton" id="b61"></div>
+    <div class="map-blankbutton" id="b71"></div>
+    <div class="map-blankbutton" id="b81"></div>
+</div>
+
+<div id="bottom" visibility="hidden">
     <table>
         <thead>
         <tr>
@@ -214,7 +213,7 @@ description:
             <button>Create</button>
         </p>
     </form>
-</p>
+</div>
 
 <script>
 //user input
