@@ -232,9 +232,9 @@ var dict = []
 order = [2]
 
 function add_row(data) {
-    const tr = document.createElement("tr");
-    const name = document.createElement("td");
-    const score = document.createElement("td");
+    tr = document.createElement("tr");
+    name = document.createElement("td");
+    score = document.createElement("td");
 
 
     // obtain data that is specific to the API
