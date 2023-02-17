@@ -135,7 +135,6 @@ const resultContainer = document.getElementById("result");
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
 const url = "https://bestgroup.duckdns.org/api/sewer"
-const create_fetch = url + '/create';
 const read_fetch = url + '/';
 
 // Load users on page entry
@@ -188,21 +187,6 @@ function read_sewers() {
         tr.appendChild(td);
         resultContainer.appendChild(tr);
     });
-}
-
-function create_sewer() {
-    const body = {
-        name: document.getElementById("name").value,
-        score: String(score()),
-    };
-    const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json",
-            'Authorization': 'Bearer my-token',
-        },
-    };
 }
 
 function add_row(data) {
