@@ -304,8 +304,16 @@ function play() { // button functions and class
         }
         else if (mines.cord[nums[i]]["ms"] == 9) {
             bname.addEventListener("click", mine.bind(null, cord))
+            bname.addEventListener('contextmenu', (ev) => {
+                ev.preventDefault();
+                bname.innerHTML = "🚩"
+            });
         }
         else {
+            bname.addEventListener('contextmenu', (ev) => {
+                ev.preventDefault();
+                bname.innerHTML = "🚩"
+            });
             bname.addEventListener("click", number.bind(null, cord)) //null is for specific button, cord is parameter in "number" function
         }
     }
@@ -398,7 +406,7 @@ function initialize() {
 
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
-const url = "https://bestgroup.duckdns.org/api/sewer"
+const url = "https://bestgroup.duckdns.org/api/sewers"
 const create_fetch = url + '/create';
 
 function create_sewer() {
