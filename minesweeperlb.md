@@ -232,9 +232,6 @@ var dict = []
 order = [2]
 
 function add_row(data) {
-    tr = document.createElement("tr");
-    name = document.createElement("td");
-    score = document.createElement("td");
 
 
     // obtain data that is specific to the API
@@ -245,11 +242,12 @@ function add_row(data) {
         key: score
         value: name
     })
-
-    resultContainer.appendChild(tr);
 }
 
 function sort() {
+    tr = document.createElement("tr");
+    name = document.createElement("td");
+    score = document.createElement("td");
     for (const [key, value] of dict.entries()) {
         for (let i = 0; i < order.length; i++) {
             if (key > order[i]) {
@@ -261,6 +259,7 @@ function sort() {
         tr.appendChild(dict.order[i]);
         tr.appendChild(order[i]);
     }
+    resultContainer.appendChild(tr);
 }
 sort()
 </script>
