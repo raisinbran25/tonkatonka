@@ -266,6 +266,7 @@
 		score_1.innerHTML = +score_1.innerHTML + 1;
 		}
 		score.style.left = 40 + 'vw';
+		score = score.innerHTML;
 		// send rally length to backend here
 		gameState = 'start';
 
@@ -284,6 +285,7 @@
 	});
 }
 
+if (gameState = 'start') {
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
 const url = "https://bestgroup.duckdns.org/api/jjjjs"
@@ -303,21 +305,22 @@ function create_jjjj() {
         },
     };
 
-    // URL for Create API
-    // Fetch API call to the database to create a new user
-    fetch(create_fetch, requestOptions)
-        .then(response => {
-        // trap error response from Web API
-        if (response.status !== 200) {
-            const errorMsg = 'Database create error: ' + response.status;
-            document.getElementById("reset") = errorMsg
-            return;
-        }
-        // response contains valid result
-        response.json().then(data => {
-            console.log(data);
-        })
-    })
+   	 // URL for Create API
+   	 // Fetch API call to the database to create a new user
+   	 fetch(create_fetch, requestOptions)
+    	    .then(response => {
+    	    // trap error response from Web API
+    	    if (response.status !== 200) {
+    	        const errorMsg = 'Database create error: ' + response.status;
+    	        document.getElementById("reset") = errorMsg
+    	        return;
+    	    }
+    	    // response contains valid result
+    	    response.json().then(data => {
+    	        console.log(data);
+  	      })
+	    })
+	}
 }
 </script>
 </body>
