@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>API Example</title>
+  </head>
+  <body>
+    <h1>API Example</h1>
+    <div id="data"></div>
+    <script>
+      // Make a request to the API
+      fetch('https://bestgroup.duckdns.org/api/fable')
+        .then(response => response.json()) // Parse the JSON response
+        .then(data => {
+          // Display the data on the page
+          const dataElement = document.getElementById('data');
+          dataElement.innerHTML = JSON.stringify(data);
+        })
+        .catch(error => {
+          console.error('Error fetching data from API:', error);
+        });
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
     <title>Social Media Post</title>
     <link rel="stylesheet" href="style.css">
   </head>
@@ -45,7 +69,7 @@
   </body>
 </html>
 
-// Load users on page entry
+Load users on page entry
 read_players();
 // Display User Table, data is fetched from Backend Database
     function read_players() {
