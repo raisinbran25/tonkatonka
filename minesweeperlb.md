@@ -220,8 +220,8 @@ function add_row(rowname, rowscore) {
 
 
     // obtain data that is specific to the API
-    name.innerHTML = rowname; 
-    score.innerHTML = rowscore; 
+    name.innerHTML = "rowname"; 
+    score.innerHTML = "rowscore"; 
 
     // add HTML to container
     tr.appendChild(name);
