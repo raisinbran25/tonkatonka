@@ -229,7 +229,7 @@ function create_sewer() {
 }
 
 var dict = []
-order = [2]
+order = []
 
 function add_row(data) {
 
@@ -250,7 +250,10 @@ function sort() {
     score = document.createElement("td");
     for (const [key, value] of dict.entries()) {
         for (let i = 0; i < order.length; i++) {
-            if (key > order[i]) {
+            if (order.length == 0) {
+                order.insert(0, key)
+            }
+            else if (key > order[i]) {
                 order.insert((i + 1), key)
             }
         }
