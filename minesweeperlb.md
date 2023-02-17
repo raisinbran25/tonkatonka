@@ -228,41 +228,20 @@ function create_sewer() {
     })
 }
 
-var dict = {}
-order = []
-
 function add_row(data) {
+    const tr = document.createElement("tr");
+    const name = document.createElement("td");
+    const score = document.createElement("td");
 
 
     // obtain data that is specific to the API
+    name.innerHTML = data.name; 
+    score.innerHTML = data.score; 
 
     // add HTML to container
+    tr.appendChild(name);
+    tr.appendChild(score);
 
-    dict.push({
-        key: score
-        value: name
-    })
-}
-
-function sort() {
-    tr = document.createElement("tr");
-    name = document.createElement("td");
-    score = document.createElement("td");
-    for (const [key, value] of dict.entries()) {
-        for (let i = 0; i < order.length; i++) {
-            if (order.length == 0) {
-                order.insert(0, key)
-            }
-            else if (key > order[i]) {
-                order.insert((i + 1), key)
-            }
-        }
-    }
-    for (let i = 0; i < order.length; i++) {
-        tr.appendChild(dict.order[i]);
-        tr.appendChild(order[i]);
-    }
     resultContainer.appendChild(tr);
 }
-sort()
 </script>
