@@ -210,5 +210,7 @@ function add_row(data) {
 
     resultContainer.appendChild(tr);
 }
-document.getElementById("result").innerHTML = dict
+tr.appendChild(dict);
+tr.appendChild(dict);
+resultContainer.appendChild(tr);
 </script>
