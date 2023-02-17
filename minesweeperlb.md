@@ -176,8 +176,8 @@ function read_sewers() {
         response.json().then(data => {
             console.log(data);
             for (let row in data) {
-                row = data[row]
-                dict[row.score] = row.name
+                crow = data[row]
+                dict[crow.score] = crow.name
             }
             for (var score in dict) {
                 if (order.length = 0) {
