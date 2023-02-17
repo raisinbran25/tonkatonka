@@ -304,8 +304,16 @@ function play() { // button functions and class
         }
         else if (mines.cord[nums[i]]["ms"] == 9) {
             bname.addEventListener("click", mine.bind(null, cord))
+            bname.addEventListener('contextmenu', (ev) => {
+                ev.preventDefault();
+                bname.innerHTML = "🚩"
+            });
         }
         else {
+            bname.addEventListener('contextmenu', (ev) => {
+                ev.preventDefault();
+                bname.innerHTML = "🚩"
+            });
             bname.addEventListener("click", number.bind(null, cord)) //null is for specific button, cord is parameter in "number" function
         }
     }
