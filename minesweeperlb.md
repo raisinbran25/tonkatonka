@@ -136,6 +136,7 @@ const resultContainer = document.getElementById("result");
 //const url = "http://localhost:8086/api/users"
 const url = "https://bestgroup.duckdns.org/api/sewer"
 const read_fetch = url + '/';
+dict = []
 
 // Load users on page entry
 read_sewers();
@@ -175,6 +176,10 @@ function read_sewers() {
             for (let row in data) {
                 console.log(data[row]);
                 add_row(data[row]);
+                dict.push({
+                    key: data[row].score,
+                    value: data[row].name                
+                })
             }
         })
     })
@@ -205,4 +210,5 @@ function add_row(data) {
 
     resultContainer.appendChild(tr);
 }
+document.getElementById("result").innerHTML = dict
 </script>
