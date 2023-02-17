@@ -114,9 +114,9 @@ description:
 </style>
 
 <h1>
-    Welcome to the MinesPongweeper Leaderboards!
+    Welcome to the Minesweeper Leaderboards!
 </h1>
-Scores are calculated using the number of hits in your tally
+Scores are calculated using number of mines and time to complete.
 <table>
     <thead>
     <tr>
@@ -134,16 +134,16 @@ Scores are calculated using the number of hits in your tally
 const resultContainer = document.getElementById("result");
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
-const url = "https://bestgroup.duckdns.org/api/scores"
+const url = "https://bestgroup.duckdns.org/api/jjjjs"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 
 // Load users on page entry
-read_scores();
+read_jjjjs();
 
 
 // Display User Table, data is fetched from Backend Database
-function read_scores() {
+function read_jjjjs() {
     // prepare fetch options
     const read_options = {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -190,7 +190,7 @@ function read_scores() {
     });
 }
 
-function create_score() {
+function create_sewer() {
     const body = {
         name: document.getElementById("name").value,
         score: String(score()),
