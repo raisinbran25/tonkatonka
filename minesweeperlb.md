@@ -210,7 +210,4 @@ function add_row(data) {
 
     resultContainer.appendChild(tr);
 }
-tr.appendChild(dict);
-tr.appendChild(dict);
-resultContainer.appendChild(tr);
 </script>
