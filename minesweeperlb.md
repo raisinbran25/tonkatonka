@@ -188,6 +188,7 @@ function read_sewers() {
                         for (let i = 0; i < order.length; i++) {
                             if (order[i] < score) {
                                 order.insert(i, score)
+                                return
                             }
                         }
                     }
