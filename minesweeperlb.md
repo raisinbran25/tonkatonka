@@ -228,7 +228,7 @@ function create_sewer() {
     })
 }
 
-var dict = []
+var dict = {}
 order = []
 
 function add_row(data) {
