@@ -1,32 +1,84 @@
 <!DOCTYPE html>
-<title>
-<head>
-<form action="submit.php" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required>
-    
-    <label for="input-text">Input Text:</label>
-    <textarea name="input-text" id="input-text" required></textarea>
-    
-    <button type="submit">Submit</button>
-  </form>
-  
-  <form action="edit.php" method="POST">
-    <label for="edit-username">Edit Username:</label>
-    <input type="text" name="edit-username" id="edit-username" required>
-    
-    <label for="edit-text">Edit Text:</label>
-    <textarea name="edit-text" id="edit-text" required></textarea>
-    
-    <button type="submit">Edit</button>
-  </form>
-  
-  <form action="delete.php" method="POST">
-    <label for="delete-username">Delete Username:</label>
-    <input type="text" name="delete-username" id="delete-username" required>
-    
-    <button type="submit">Delete</button>
-  </form>
+<html>
+  <head>
+    <title>Social Media Post</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form method="post" action="submit.php">
+      <h2>Create Post</h2>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" required>
+      <br>
+      <label for="bodytext">Body Text:</label>
+      <textarea name="bodytext" id="bodytext" rows="4" cols="50" required></textarea>
+      <br>
+      <label for="like">Like:</label>
+      <input type="radio" name="like" id="like" value="1">
+      <label for="dislike">Dislike:</label>
+      <input type="radio" name="like" id="dislike" value="0">
+      <br>
+      <input type="submit" value="Save">
+    </form>
+    <form method="post" action="edit.php">
+      <h2>Edit Post</h2>
+      <label for="postid">Post ID:</label>
+      <input type="text" name="postid" id="postid" required>
+      <br>
+      <label for="newbodytext">New Body Text:</label>
+      <textarea name="newbodytext" id="newbodytext" rows="4" cols="50"></textarea>
+      <br>
+      <label for="newlike">New Like:</label>
+      <input type="radio" name="newlike" id="newlike" value="1">
+      <label for="newdislike">New Dislike:</label>
+      <input type="radio" name="newlike" id="newdislike" value="0">
+      <br>
+      <input type="submit" value="Edit">
+    </form>
+    <form method="post" action="delete.php">
+      <h2>Delete Post</h2>
+      <label for="deleteid">Post ID:</label>
+      <input type="text" name="deleteid" id="deleteid" required>
+      <br>
+      <input type="submit" value="Delete">
+    </form>
+  </body>
+</html>
 
-  <h1>User Inputs:</h1>
-<?php include 'display.php'; ?>
+// Load users on page entry
+read_players();
+// Display User Table, data is fetched from Backend Database
+    function read_players() {
+        // prepare fetch options
+        const read_options = {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'omit', // include, *same-origin, omit
+            headers: {
+            'Content-Type': 'application/json'
+            },
+        };
+    
+        // fetch the data from API
+        fetch(read_fetch, read_options)
+            // response is a RESTful "promise" on any successful fetch
+            .then(response => {
+            // check for response errors
+            if (response.status !== 200) {
+                const errorMsg = 'Database read error: ' + response.status;
+                console.log(errorMsg);
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.innerHTML = errorMsg;
+                tr.appendChild(td);
+                resultContainer.appendChild(tr);
+                return;
+            }
+            // valid response will have json data
+            response.json().then(data => {
+                console.log(data);
+                for (let row in data) {
+                    console.log(data[row]);
+                    add_row(data[row]);
+                }}
