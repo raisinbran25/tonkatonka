@@ -137,10 +137,12 @@ const resultContainer = document.getElementById("result");
 const url = "https://bestgroup.duckdns.org/api/sewer"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
+dict = {}
+order = []
 
 // Load users on page entry
 read_sewers();
-
+addorder();
 
 // Display User Table, data is fetched from Backend Database
 function read_sewers() {
@@ -174,8 +176,23 @@ function read_sewers() {
         response.json().then(data => {
             console.log(data);
             for (let row in data) {
-                console.log(data[row]);
-                add_row(data[row]);
+                row = data[row]
+                dict[row.score] = row.name
+            }
+            for (var score in dict) {
+                if (order.length = 0) {
+                    order.insert(0, score)
+                }
+                else {
+                    function place() {
+                        for (let i = 0; i < order.length; i++) {
+                            if (order[i] < score) {
+                                order.insert(i, score)
+                            }
+                        }
+                    }
+                    place()
+                }
             }
         })
     })
@@ -190,30 +207,21 @@ function read_sewers() {
     });
 }
 
-function create_sewer() {
-    const body = {
-        name: document.getElementById("name").value,
-        score: String(score()),
-    };
-    const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json",
-            'Authorization': 'Bearer my-token',
-        },
-    };
+function addorder() {
+    for (let i = 0; i < order.length; i++) {
+        add_row(dict[order[i]], order[i])
+    }
 }
 
-function add_row(data) {
+function add_row(rowname, rowscore) {
     const tr = document.createElement("tr");
     const name = document.createElement("td");
     const score = document.createElement("td");
 
 
     // obtain data that is specific to the API
-    name.innerHTML = data.name; 
-    score.innerHTML = data.score; 
+    name.innerHTML = rowname; 
+    score.innerHTML = rowscore; 
 
     // add HTML to container
     tr.appendChild(name);
