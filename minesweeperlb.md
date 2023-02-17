@@ -135,14 +135,11 @@ const resultContainer = document.getElementById("result");
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
 const url = "https://bestgroup.duckdns.org/api/sewer"
-const create_fetch = url + '/create';
 const read_fetch = url + '/';
-dict = {}
-order = []
 
 // Load users on page entry
 read_sewers();
-addorder();
+
 
 // Display User Table, data is fetched from Backend Database
 function read_sewers() {
@@ -176,24 +173,8 @@ function read_sewers() {
         response.json().then(data => {
             console.log(data);
             for (let row in data) {
-                crow = data[row]
-                dict[crow.score] = crow.name
-            }
-            for (var score in dict) {
-                if (order.length = 0) {
-                    order.insert(0, score)
-                }
-                else {
-                    function place() {
-                        for (let i = 0; i < order.length; i++) {
-                            if (order[i] < score) {
-                                order.insert(i, score)
-                                return
-                            }
-                        }
-                    }
-                    place()
-                }
+                console.log(data[row]);
+                add_row(data[row]);
             }
         })
     })
@@ -208,21 +189,15 @@ function read_sewers() {
     });
 }
 
-function addorder() {
-    for (let i = 0; i < order.length; i++) {
-        add_row(dict[order[i]], order[i])
-    }
-}
-
-function add_row(rowname, rowscore) {
+function add_row(data) {
     const tr = document.createElement("tr");
     const name = document.createElement("td");
     const score = document.createElement("td");
 
 
     // obtain data that is specific to the API
-    name.innerHTML = rowname; 
-    score.innerHTML = rowscore; 
+    name.innerHTML = data.name; 
+    score.innerHTML = data.score; 
 
     // add HTML to container
     tr.appendChild(name);
