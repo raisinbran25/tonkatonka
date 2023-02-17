@@ -398,7 +398,7 @@ function initialize() {
 
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
-const url = "https://bestgroup.duckdns.org/api/sewers"
+const url = "https://bestgroup.duckdns.org/api/sewer"
 const create_fetch = url + '/create';
 
 function create_sewer() {
