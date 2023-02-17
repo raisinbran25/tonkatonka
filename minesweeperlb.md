@@ -175,7 +175,7 @@ function read_sewers() {
             console.log(data);
             for (let row in data) {
                 console.log(data[row]);
-                
+                add_row(data[row]);
             }
         })
     })
@@ -203,29 +203,6 @@ function create_sewer() {
             'Authorization': 'Bearer my-token',
         },
     };
-
-    // URL for Create API
-    // Fetch API call to the database to create a new user
-    fetch(create_fetch, requestOptions)
-        .then(response => {
-        // trap error response from Web API
-        if (response.status !== 200) {
-            const errorMsg = 'Database create error: ' + response.status;
-            console.log(errorMsg);
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = errorMsg;
-            tr.appendChild(td);
-            resultContainer.appendChild(tr);
-            return;
-        }
-        // response contains valid result
-        response.json().then(data => {
-            console.log(data);
-            //add a table row for the new/created userid
-            add_row(data);
-        })
-    })
 }
 
 function add_row(data) {
