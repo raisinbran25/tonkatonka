@@ -203,7 +203,7 @@ description:
 numines = null
 function enter() {
     input = document.getElementById("button").value
-    if (input > 1 && input < 21) {
+    if (input > 0 && input < 21) {
         numines = input
     }
 }
