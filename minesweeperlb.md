@@ -176,10 +176,6 @@ function read_sewers() {
             for (let row in data) {
                 console.log(data[row]);
                 add_row(data[row]);
-                dict.push({
-                    key: data[row].score,
-                    value: data[row].name                
-                })
             }
         })
     })
