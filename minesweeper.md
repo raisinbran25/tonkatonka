@@ -402,6 +402,9 @@ const url = "https://bestgroup.duckdns.org/api/sewer"
 const create_fetch = url + '/create';
 
 function create_sewer() {
+    if (document.getElementById("username").value.length == 0) {
+        return
+    }
     const body = {
         name: document.getElementById("username").value,
         score: String(score()),
