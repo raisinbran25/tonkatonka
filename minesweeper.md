@@ -446,8 +446,8 @@ function checkuser() {
                     document.getElementById("reset").innerHTML = "username taken, try another"
                     return
                 }
-                for (let i = 0; i < String(datarow).length; i++) {
-                    if (String(datarow)[i] == " ") {
+                for (let i = 0; i < datarow.length; i++) {
+                    if (datarow[i] == " ") {
                         document.getElementById("reset").innerHTML = "that has a space, try another"
                         return
                     }
