@@ -411,6 +411,12 @@ const read_fetch = url + '/';
 
 //check if username is taken by iterating through database/has spaces
 function checkuser() {
+    for (let i = 0; i < document.getElementById("username").value; i++) {
+        if (document.getElementById("username").value[i] == ' ') {
+            document.getElementById("reset").innerHTML = "that has a space, try another"
+            return
+        }
+    }
     // prepare fetch options
     const read_options = {
         method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -424,6 +430,7 @@ function checkuser() {
 
     // fetch the data from API
     fetch(read_fetch, read_options)
+    
         // response is a RESTful "promise" on any successful fetch
         .then(response => {
         // check for response errors
@@ -442,12 +449,6 @@ function checkuser() {
             console.log(data);
             for (let row in data) {
                 datarow = data[row]
-                for (let i = 0; i < document.getElementById("username").value; i++) {
-                    if (document.getElementById("username").value[i] == ' ') {
-                        document.getElementById("reset").innerHTML = "that has a space, try another"
-                        return
-                    }
-                }
                 if (datarow.name == document.getElementById("username").value) {
                     document.getElementById("reset").innerHTML = "username taken, try another"
                     return
