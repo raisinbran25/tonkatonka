@@ -399,6 +399,7 @@ function initialize() {
 //const url = "http://localhost:8086/api/users"
 const url = "https://bestgroup.duckdns.org/api/sewer"
 const create_fetch = url + '/create';
+const read_fetch = url + '/';
 
 function checkuser() {
     // prepare fetch options
@@ -432,7 +433,7 @@ function checkuser() {
             console.log(data);
             for (let row in data) {
                 datarow = data[row]
-                if (7 == 7) {
+                if (datarow.name == document.getElementById("username").value) {
                     document.getElementById("reset").innerHTML = "username taken, try another"
                 }
             }
