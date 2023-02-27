@@ -437,7 +437,7 @@ function checkuser() {
                     document.getElementById("reset").innerHTML = "username taken, try another"
                 }
                 else {
-                    document.getElementById("reset").innerHTML = "username not taken, enter mines and click here to play"
+                    document.getElementById("reset").innerHTML = "username not taken, enter mines and click here to play!"
                 }
             }
         })
