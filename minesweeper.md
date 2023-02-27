@@ -442,15 +442,15 @@ function checkuser() {
             console.log(data);
             for (let row in data) {
                 datarow = data[row]
-                if (datarow.name == document.getElementById("username").value) {
-                    document.getElementById("reset").innerHTML = "username taken, try another"
-                    return
-                }
                 for (let i = 0; i < document.getElementById("username").value; i++) {
-                    if (document.getElementById("username").value.charAt(i) == ' ') {
+                    if (document.getElementById("username").value[i] == ' ') {
                         document.getElementById("reset").innerHTML = "that has a space, try another"
                         return
                     }
+                }
+                if (datarow.name == document.getElementById("username").value) {
+                    document.getElementById("reset").innerHTML = "username taken, try another"
+                    return
                 }
             }
             document.getElementById("reset").innerHTML = "username not taken, enter mines and click here to play!"
