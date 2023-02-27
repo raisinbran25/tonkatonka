@@ -112,6 +112,7 @@ description:
     background-color: #373737;
 }
 </style>
+<!--top html-->
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
 <div>
     enter a username:<input type="text" id="username" value="">
@@ -258,6 +259,7 @@ mines = { // object storing ids and number of surrounding mines
 nums = [] // all possible ids
 mids = [] // ids of mines
 
+// calculate all possible coordinates/ids
 function addcords() {
     for (let i = 11; i < 90; i++) {
         if (String(i)[0] != "9" && String(i)[0] != "0") {
@@ -268,6 +270,7 @@ function addcords() {
         }
     }
 }
+//randomly places mines using list of ids
 function placemines() { // adds ms value "9" in object
     while (mids.length < numines) { // place 10 mines
         r = Math.floor(Math.random() * 64)
@@ -277,7 +280,8 @@ function placemines() { // adds ms value "9" in object
         }
     }
 }
-function calcmines() { // updates all other ms values in object
+// updates all other ms values in object
+function calcmines() { 
     dvals = [-11, -10, -9, -1, 1, 9, 10, 11]
     for (let i = 0; i < mids.length; i++) { //each mine
         for (let j = 0; j < dvals.length; j++) { //each difference value
@@ -292,7 +296,8 @@ function calcmines() { // updates all other ms values in object
         }
     }
 }
-function play() { // button functions and class
+// button functions and class
+function play() { 
     if (numines == null) {
         return
     }
@@ -350,6 +355,7 @@ function mine() { // game over
         window.location.reload()
     })
 }
+//check if user has cleared all nonmine squares
 function checkwin() {
     if (winstatus == false) {
         return
@@ -366,6 +372,7 @@ function checkwin() {
     winstatus = true
     win()
 }
+//update board and message for win
 function win() {
     for (let i = 0; i < nums.length; i++) {
         cord = String(nums[i])
@@ -387,6 +394,7 @@ function win() {
     updatetime()
     create_sewer()
 }
+//call all other functions for inital game
 function initialize() {
     addcords()
     placemines()
@@ -401,6 +409,7 @@ const url = "https://bestgroup.duckdns.org/api/sewer"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 
+//check if username is taken by iterating through database
 function checkuser() {
     // prepare fetch options
     const read_options = {
@@ -452,6 +461,7 @@ function checkuser() {
     });
 }
 
+// "post" function to database
 function create_sewer() {
     if (document.getElementById("username").value.length == 0) {
         return
