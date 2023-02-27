@@ -446,6 +446,13 @@ function checkuser() {
                     document.getElementById("reset").innerHTML = "username taken, try another"
                     return
                 }
+                dname = datarow.name
+                for (let i = 0; i < dname.length; i++) {
+                    if (dname.charat(i) == ' ') {
+                        document.getElementById("reset").innerHTML = "that has a space, try another"
+                        return
+                    }
+                }
             }
             document.getElementById("reset").innerHTML = "username not taken, enter mines and click here to play!"
         })
