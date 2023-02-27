@@ -201,12 +201,15 @@ description:
 </div>
 
 <script>
-//user input
+//user input for mines
 numines = null
 function enter() {
     input = document.getElementById("button").value
-    if (input > 0 && input < 21) {
+    if (input > 1 && input < 21) {
         numines = input
+    }
+    else {
+        document.getElementById("reset").innerHTML = "please pick a number from 2-20"
     }
 }
 // score calculator
