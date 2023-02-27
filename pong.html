@@ -292,9 +292,10 @@ const create_fetch = url + '/create';
 
 function create_jjjj() {
     const body = {
-        name: string('testingthissetuphopefullyitworks'),
-        score: string('score.innerHTML')
+        name: string("testingthissetuphopefullyitworks"),
+        score: string("score.innerHTML")
     };
+
     const requestOptions = {
         method: 'POST',
         body: JSON.stringify(body),
