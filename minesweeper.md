@@ -447,6 +447,7 @@ function checkuser() {
                     return
                 }
                 dname = datarow.name
+                console.log("hello1")
                 for (let i = 0; i < dname.length; i++) {
                     if (dname.charAt(i) == ' ') {
                         console.log("hello")
