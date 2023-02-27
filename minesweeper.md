@@ -446,7 +446,7 @@ function checkuser() {
                     document.getElementById("reset").innerHTML = "username taken, try another"
                     return
                 }
-                for l in String(datarow) {
+                for (l in String(datarow)) {
                     if l == " "
                     document.getElementById("reset").innerHTML = "username taken, try another"
                 }
