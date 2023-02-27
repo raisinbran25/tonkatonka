@@ -409,7 +409,7 @@ const url = "https://bestgroup.duckdns.org/api/sewer"
 const create_fetch = url + '/create';
 const read_fetch = url + '/';
 
-//check if username is taken by iterating through database
+//check if username is taken by iterating through database/has spaces
 function checkuser() {
     // prepare fetch options
     const read_options = {
