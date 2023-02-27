@@ -190,6 +190,7 @@ function read_sewers() {
     });
 }
 
+// add database info to frontend
 function add_row(data) {
     const tr = document.createElement("tr");
     const name = document.createElement("td");
