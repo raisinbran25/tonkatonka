@@ -449,6 +449,7 @@ function checkuser() {
                 dname = datarow.name
                 for (let i = 0; i < dname.length; i++) {
                     if (dname.charAt(i) == ' ') {
+                        console.log("hello")
                         document.getElementById("reset").innerHTML = "that has a space, try another"
                         return
                     }
