@@ -432,7 +432,7 @@ function checkuser() {
             console.log(data);
             for (let row in data) {
                 datarow = data[row]
-                if (datarow.name == document.getElementById("username").value) {
+                if (7 == 7) {
                     document.getElementById("reset").innerHTML = "username taken, try another"
                 }
             }
