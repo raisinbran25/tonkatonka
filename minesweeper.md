@@ -446,12 +446,8 @@ function checkuser() {
                     document.getElementById("reset").innerHTML = "username taken, try another"
                     return
                 }
-                dname = datarow.name
-                console.log("hello1")
-                for (let i = 0; i < dname.length; i++) {
-                    console.log(dname.charAt(i))
-                    if (dname.charAt(i) == ' ') {
-                        console.log("hello")
+                for (let i = 0; i < document.getElementById("username").value; i++) {
+                    if (document.getElementById("username").value[i] == ' ') {
                         document.getElementById("reset").innerHTML = "that has a space, try another"
                         return
                     }
