@@ -435,11 +435,10 @@ function checkuser() {
                 datarow = data[row]
                 if (datarow.name == document.getElementById("username").value) {
                     document.getElementById("reset").innerHTML = "username taken, try another"
-                }
-                else {
-                    document.getElementById("reset").innerHTML = "username not taken, enter mines and click here to play!"
+                    return
                 }
             }
+            document.getElementById("reset").innerHTML = "username not taken, enter mines and click here to play!"
         })
     })
     // catch fetch errors (ie ACCESS to server blocked)
