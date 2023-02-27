@@ -413,9 +413,7 @@ const read_fetch = url + '/';
 function checkuser() {
     testuser = document.getElementById("username").value
     for (let i = 0; i < testuser.length; i++) {
-        console.log(testuser[i])
         if (testuser[i] == ' ') {
-            console.log("true")
             document.getElementById("reset").innerHTML = "that has a space, try another"
             return
         }
