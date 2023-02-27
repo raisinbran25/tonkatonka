@@ -447,7 +447,7 @@ function checkuser() {
                     return
                 }
                 for (let i = 0; i < document.getElementById("username").value; i++) {
-                    if (document.getElementById("username").value[i] == ' ') {
+                    if (document.getElementById("username").value.charAt(i) == ' ') {
                         document.getElementById("reset").innerHTML = "that has a space, try another"
                         return
                     }
