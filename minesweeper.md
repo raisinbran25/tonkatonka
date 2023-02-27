@@ -448,7 +448,7 @@ function checkuser() {
                 }
                 for (l in String(datarow)) {
                     if l == " "
-                    document.getElementById("reset").innerHTML = "username taken, try another"
+                    document.getElementById("reset").innerHTML = "that has a space, try another"
                 }
             }
             document.getElementById("reset").innerHTML = "username not taken, enter mines and click here to play!"
