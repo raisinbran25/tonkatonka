@@ -411,8 +411,11 @@ const read_fetch = url + '/';
 
 //check if username is taken by iterating through database/has spaces
 function checkuser() {
-    for (let i = 0; i < document.getElementById("username").value; i++) {
-        if (document.getElementById("username").value[i] == ' ') {
+    testuser = document.getElementById("username").value
+    for (let i = 0; i < testuser.length; i++) {
+        console.log(testuser[i])
+        if (testuser[i] == ' ') {
+            console.log("true")
             document.getElementById("reset").innerHTML = "that has a space, try another"
             return
         }
@@ -454,7 +457,7 @@ function checkuser() {
                     return
                 }
             }
-            document.getElementById("reset").innerHTML = "username not taken, enter mines and click here to play!"
+            document.getElementById("reset").innerHTML = "username valid, enter mines and click here to play!"
         })
     })
     // catch fetch errors (ie ACCESS to server blocked)
