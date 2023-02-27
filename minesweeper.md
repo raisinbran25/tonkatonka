@@ -449,7 +449,7 @@ function checkuser() {
                 for (l in String(datarow)) {
                     if (l == " ") {
                         document.getElementById("reset").innerHTML = "that has a space, try another"
-                    return
+                        return
                     }
                 }
             }
