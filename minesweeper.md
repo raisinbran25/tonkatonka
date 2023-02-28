@@ -112,9 +112,11 @@ description:
     background-color: #373737;
 }
 </style>
+<!--top html-->
 [Click here to view the leaderboards for this game](https://raisinbran25.github.io/tonkatonka/minesweeperlb)
 <div>
     enter a username:<input type="text" id="username" value="">
+    <button type="button" onclick="checkuser()">Check Username</button>
 </div>
 
 <div>
@@ -199,12 +201,15 @@ description:
 </div>
 
 <script>
-//user input
+//user input for mines
 numines = null
 function enter() {
     input = document.getElementById("button").value
-    if (input > 0 && input < 21) {
+    if (input > 1 && input < 21) {
         numines = input
+    }
+    else {
+        document.getElementById("reset").innerHTML = "please pick a number from 2-20"
     }
 }
 // score calculator
@@ -257,6 +262,7 @@ mines = { // object storing ids and number of surrounding mines
 nums = [] // all possible ids
 mids = [] // ids of mines
 
+// calculate all possible coordinates/ids
 function addcords() {
     for (let i = 11; i < 90; i++) {
         if (String(i)[0] != "9" && String(i)[0] != "0") {
@@ -267,6 +273,7 @@ function addcords() {
         }
     }
 }
+//randomly places mines using list of ids
 function placemines() { // adds ms value "9" in object
     while (mids.length < numines) { // place 10 mines
         r = Math.floor(Math.random() * 64)
@@ -276,7 +283,8 @@ function placemines() { // adds ms value "9" in object
         }
     }
 }
-function calcmines() { // updates all other ms values in object
+// updates all other ms values in object
+function calcmines() { 
     dvals = [-11, -10, -9, -1, 1, 9, 10, 11]
     for (let i = 0; i < mids.length; i++) { //each mine
         for (let j = 0; j < dvals.length; j++) { //each difference value
@@ -291,7 +299,8 @@ function calcmines() { // updates all other ms values in object
         }
     }
 }
-function play() { // button functions and class
+// button functions and class
+function play() { 
     if (numines == null) {
         return
     }
@@ -349,6 +358,7 @@ function mine() { // game over
         window.location.reload()
     })
 }
+//check if user has cleared all nonmine squares
 function checkwin() {
     if (winstatus == false) {
         return
@@ -365,6 +375,7 @@ function checkwin() {
     winstatus = true
     win()
 }
+//update board and message for win
 function win() {
     for (let i = 0; i < nums.length; i++) {
         cord = String(nums[i])
@@ -386,13 +397,12 @@ function win() {
     updatetime()
     create_sewer()
 }
+//call all other functions for inital game
 function initialize() {
     addcords()
     placemines()
     calcmines()
     play()
-     
-     
 }
 
 
@@ -400,7 +410,69 @@ function initialize() {
 //const url = "http://localhost:8086/api/users"
 const url = "https://bestgroup.duckdns.org/api/sewer"
 const create_fetch = url + '/create';
+const read_fetch = url + '/';
 
+//check if username is taken by iterating through database/has spaces
+function checkuser() {
+    testuser = document.getElementById("username").value
+    for (let i = 0; i < testuser.length; i++) {
+        if (testuser[i] == ' ') {
+            document.getElementById("reset").innerHTML = "that has a space, try another"
+            return
+        }
+    }
+    // prepare fetch options
+    const read_options = {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'omit', // include, *same-origin, omit
+        headers: {
+        'Content-Type': 'application/json'
+        },
+    };
+
+    // fetch the data from API
+    fetch(read_fetch, read_options)
+    
+        // response is a RESTful "promise" on any successful fetch
+        .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            const errorMsg = 'Database read error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            resultContainer.appendChild(tr);
+            return;
+        }
+        // valid response will have json data
+        response.json().then(data => {
+            console.log(data);
+            for (let row in data) {
+                datarow = data[row]
+                if (datarow.name == document.getElementById("username").value) {
+                    document.getElementById("reset").innerHTML = "username taken, try another"
+                    return
+                }
+            }
+            document.getElementById("reset").innerHTML = "username valid, enter mines and click here to play!"
+        })
+    })
+    // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => {
+        console.error(err);
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        td.innerHTML = err;
+        tr.appendChild(td);
+        resultContainer.appendChild(tr);
+    });
+}
+
+// "post" function to database
 function create_sewer() {
     if (document.getElementById("username").value.length == 0) {
         return
