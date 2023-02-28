@@ -114,9 +114,9 @@ description:
 </style>
 
 <h1>
-    Welcome to the Minesweeper Leaderboards!
+    Welcome to the pong Leaderboards!
 </h1>
-Scores are calculated using number of mines and time to complete.
+Scores are calculated using length of the rally
 <table>
     <thead>
     <tr>
