@@ -1,108 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>API Example</title>
-  </head>
-  <body>
-    <h1>API Example</h1>
-    <div id="data"></div>
-    <script>
-      // Make a request to the API
-      fetch('https://bestgroup.duckdns.org/api/fable')
-        .then(response => response.json()) // Parse the JSON response
-        .then(data => {
-          // Display the data on the page
-          const dataElement = document.getElementById('data');
-          dataElement.innerHTML = JSON.stringify(data);
-        })
-        .catch(error => {
-          console.error('Error fetching data from API:', error);
-        });
-    </script>
-  </body>
-</html>
+<head>
+	<title>Fable API</title>
+	<style>
+		table, th, td {
+		  border: 1px solid black;
+		  border-collapse: collapse;
+		  padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Fable API</h1>
+	<form id="create-fable-form">
+		<h2>Create a Fable</h2>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="score">Story:</label>
+		<input type="text" id="score" name="score"><br><br>
+		<button type="submit">Create Fable</button>
+	</form>
+	<hr>
+	<h2>Fables</h2>
+	<table id="fable-table">
+		<tr>
+			<th>Name</th>
+			<th>Score</th>
+			<th>Action</th>
+		</tr>
+	</table>
+	<script>
+		const apiUrl = 'http://bestgroup.duckdns.org/api/fable/';
 
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <title>Social Media Post</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <form method="post" action="submit.php">
-      <h2>Create Post</h2>
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" required>
-      <br>
-      <label for="bodytext">Body Text:</label>
-      <textarea name="bodytext" id="bodytext" rows="4" cols="50" required></textarea>
-      <br>
-      <label for="like">Like:</label>
-      <input type="radio" name="like" id="like" value="1">
-      <label for="dislike">Dislike:</label>
-      <input type="radio" name="like" id="dislike" value="0">
-      <br>
-      <input type="submit" value="Save">
-    </form>
-    <form method="post" action="edit.php">
-      <h2>Edit Post</h2>
-      <label for="postid">Post ID:</label>
-      <input type="text" name="postid" id="postid" required>
-      <br>
-      <label for="newbodytext">New Body Text:</label>
-      <textarea name="newbodytext" id="newbodytext" rows="4" cols="50"></textarea>
-      <br>
-      <label for="newlike">New Like:</label>
-      <input type="radio" name="newlike" id="newlike" value="1">
-      <label for="newdislike">New Dislike:</label>
-      <input type="radio" name="newlike" id="newdislike" value="0">
-      <br>
-      <input type="submit" value="Edit">
-    </form>
-    <form method="post" action="delete.php">
-      <h2>Delete Post</h2>
-      <label for="deleteid">Post ID:</label>
-      <input type="text" name="deleteid" id="deleteid" required>
-      <br>
-      <input type="submit" value="Delete">
-    </form>
-  </body>
-</html>
+		// function to fetch all fables from the API and display in the table
+		async function displayFables() {
+			const response = await fetch(apiUrl);
+			const fables = await response.json();
+			const fableTable = document.getElementById('fable-table');
+			fableTable.innerHTML = `
+				<tr>
+					<th>Name</th>
+					<th>Score</th>
+					<th>Action</th>
+				</tr>
+			`;
+			fables.forEach(fable => {
+				fableTable.innerHTML += `
+					<tr>
+						<td>${fable.name}</td>
+						<td>${fable.score}</td>
+						<td><button onclick="deleteFable(${fable.id})">Delete</button></td>
+					</tr>
+				`;
+			});
+		}
 
-Load users on page entry
-read_players();
-// Display User Table, data is fetched from Backend Database
-    function read_players() {
-        // prepare fetch options
-        const read_options = {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
-            mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'omit', // include, *same-origin, omit
-            headers: {
-            'Content-Type': 'application/json'
-            },
-        };
-    
-        // fetch the data from API
-        fetch(read_fetch, read_options)
-            // response is a RESTful "promise" on any successful fetch
-            .then(response => {
-            // check for response errors
-            if (response.status !== 200) {
-                const errorMsg = 'Database read error: ' + response.status;
-                console.log(errorMsg);
-                const tr = document.createElement("tr");
-                const td = document.createElement("td");
-                td.innerHTML = errorMsg;
-                tr.appendChild(td);
-                resultContainer.appendChild(tr);
-                return;
-            }
-            // valid response will have json data
-            response.json().then(data => {
-                console.log(data);
-                for (let row in data) {
-                    console.log(data[row]);
-                    add_row(data[row]);
-                }}
+		// function to create a new fable via the API
+		async function createFable(event) {
+			event.preventDefault();
+			const name = document.getElementById('name').value;
+			const score = document.getElementById('score').value;
+			const response = await fetch(apiUrl + 'create', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ name, score })
+			});
+			const result = await response.json();
+			alert(result.message);
+			displayFables();
+		}
+
+		// function to delete a fable via the API
+		async function deleteFable(id) {
+			if (confirm('Are you sure you want to delete this fable?')) {
+				const response = await fetch(apiUrl + id, { method: 'DELETE' });
+				const result = await response.json();
+				alert(result.message);
+				displayFables();
+			}
+		}
+
+		// attach event listeners to the form and table
+		document.getElementById('create-fable-form').addEventListener('submit', createFable);
+		displayFables();
+	</script>
+</body>
+</html>
