@@ -201,12 +201,6 @@ description:
 </div>
 
 <script>
-
-function color(btn) {  
-    console.log(document.getElementById(btn).style.backgroundColor)
-    document.getElementById(btn).style.backgroundColor = 'Green';  
-} 
-color("b11")
 //user input for mines
 numines = null
 function enter() {
@@ -314,10 +308,8 @@ function play() {
         cord = String(nums[i])
         bname = document.getElementById("b" + cord)
         bname.className = "map-blankbutton"
-        bname.backgroundColor = "#D2B48C"
         if (mines.cord[nums[i]]["ms"] == 0) {
             bname.className = "map-zerobutton"
-            bname.backgroundColor = "#90EE90"
         }
         else if (mines.cord[nums[i]]["ms"] == 9) {
             bname.addEventListener("click", mine.bind(null, cord))
@@ -337,7 +329,6 @@ function number(cord) { // reveal number
     }
     bname = document.getElementById("b" + String(cord))
     bname.className = "map-numberbutton"
-    bname.backgroundColor = "#D2B48C"
     bname.innerHTML = String(mines.cord[String(cord)]["ms"])
     checkwin()
 }
@@ -360,14 +351,6 @@ function mine() { // game over
             bname.className = "map-numberbutton"
             bname.innerHTML = String(mines.cord[String(cord)]["ms"])
         }
-    }
-    for (let i = 0; i < mids.length; i++) {
-        bname = "b" + Strings(mids[i])
-        bname.backgroundColor = "#AA4A44"
-    }
-    for (let i = 0; i < nums.length; i++) {
-        bname = "b" + Strings(nums[i])
-        color(bname)
     }
     bname = document.getElementById("reset")
     bname.innerHTML = "you lost! click here to reset."
