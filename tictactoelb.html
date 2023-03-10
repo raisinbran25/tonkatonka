@@ -2,7 +2,7 @@
     body {
       background-color: #252a33;
     }
-  </style>
+</style>
 <style>
 .map-container { 
     width: 500px;
@@ -133,9 +133,9 @@ Scores by X wins and O wins
 const resultContainer = document.getElementById("result");
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
-const url = "https://bestgroup.duckdns.org/api/players"
+const url = "http://127.0.0.1:8086/api/users/"
 const create_fetch = url + '/create';
-const read_fetch = url + '/';
+const read_fetch = url;
 
 // Load users on page entry
 read_players();
@@ -173,8 +173,9 @@ function read_players() {
         response.json().then(data => {
             console.log(data);
             for (let row in data) {
-                console.log(data[row]);
-                add_row(data[row]);
+                console.log(row);
+                console.log(data[row]["o_wins"]);
+                add_row(data[row]["name"], "Number of O wins " + data[row]["o_wins"] + " Number of X wins " + data[row]["x_wins"]);
             }
         })
     })
@@ -227,15 +228,17 @@ function create_player() {
     })
 }
 
-function add_row(data) {
+// https://bestgroup.duckdns.org/api/users/
+
+function add_row(dataname, data) {
     const tr = document.createElement("tr");
     const name = document.createElement("td");
     const score = document.createElement("td");
 
 
     // obtain data that is specific to the API
-    name.innerHTML = data.name; 
-    score.innerHTML = data.score; 
+    name.innerHTML = dataname; 
+    score.innerHTML = data; 
 
     // add HTML to container
     tr.appendChild(name);

@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+	
 	<meta charset="UTF-8">
 	<meta name ="viewport" content=
 	"width=device-width, initial-scale=1.0">
-
+	<div style = "position:fixed; left:80px; top:1000px;">
+		<input type="text" name="username" required />
+	 </div>
 	<title>Pong</title>
 
 	<style>
@@ -268,9 +271,8 @@
 		score.style.left = 40 + 'vw';
 		score = score.innerHTML;
 		gameState = 'start';
+		username = 'tempusername';
 		create_jjjj();
-
-
 		ball_coord = initial_ball_coord;
 		ball.style = initial_ball.style;
 		message.innerHTML = 'Press Enter';
@@ -287,14 +289,18 @@
 
 // prepare URL's to allow easy switch from deployment and localhost
 //const url = "http://localhost:8086/api/users"
-const url = "https://bestgroup.duckdns.org/api/jjjjs"
+const url = "https://bestgroup.duckdns.org/api/jjjj"
 const create_fetch = url + '/create';
 
 function create_jjjj() {
+    if (document.getElementById("username").value.length == 0) {
+        return
+    }
     const body = {
-        name: string('testingthissetuphopefullyitworks'),
-        score: string('score.innerHTML')
+        name: document.getElementById("username").value,
+        score: document.getElementById("score").value,
     };
+
     const requestOptions = {
         method: 'POST',
         body: JSON.stringify(body),
@@ -304,22 +310,23 @@ function create_jjjj() {
         },
     };
 
-   	 // URL for Create API
-   	 // Fetch API call to the database to create a new user
-   	 fetch(create_fetch, requestOptions)
-    	    .then(response => {
-    	    // trap error response from Web API
-    	    if (response.status !== 200) {
-    	        const errorMsg = 'Database create error: ' + response.status;
-    	        document.getElementById("reset") = errorMsg
-    	        return;
-    	    }
-    	    // response contains valid result
-    	    response.json().then(data => {
-    	        console.log(data);
-  	      })
-	    })
-	}
+    // URL for Create API
+    // Fetch API call to the database to create a new user
+    fetch(create_fetch, requestOptions)
+        .then(response => {
+        // trap error response from Web API
+        if (response.status !== 200) {
+            const errorMsg = 'Database create error: ' + response.status;
+            document.getElementById("reset") = errorMsg
+            return;
+        }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+        })
+    })
+}
+
 </script>
 </body>
 
