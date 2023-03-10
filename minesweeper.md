@@ -312,7 +312,7 @@ function play() {
     for (let i = 0; i < nums.length; i++) {
         cord = String(nums[i])
         bname = document.getElementById("b" + cord)
-        color(bname)
+        color("b11")
         bname.className = "map-blankbutton"
         if (mines.cord[nums[i]]["ms"] == 0) {
             bname.className = "map-zerobutton"
