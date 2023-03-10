@@ -203,9 +203,10 @@ description:
 <script>
 
 function color(btn) {  
+    document.getElementById(btn).innerHTML = document.getElementById(btn).backgroundColor
     document.getElementById(btn).style.backgroundColor = 'Green';  
-    setTimeout("ChangeColor4()", 2000);  
 } 
+color("b11")
 //user input for mines
 numines = null
 function enter() {
@@ -312,7 +313,6 @@ function play() {
     for (let i = 0; i < nums.length; i++) {
         cord = String(nums[i])
         bname = document.getElementById("b" + cord)
-        color("b11")
         bname.className = "map-blankbutton"
         if (mines.cord[nums[i]]["ms"] == 0) {
             bname.className = "map-zerobutton"
