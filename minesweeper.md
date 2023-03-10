@@ -203,7 +203,7 @@ description:
 <script>
 
 function color(btn) {  
-    document.getElementById(btn).innerHTML = document.getElementById(btn).backgroundColor
+    console.log(document.getElementById(btn).backgroundColor)
     document.getElementById(btn).style.backgroundColor = 'Green';  
 } 
 color("b11")
