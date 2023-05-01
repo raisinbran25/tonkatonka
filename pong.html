@@ -11,6 +11,8 @@
 	 </div>
 	<title>Pong</title>
 
+<button type="button" onclick="alert(top5scores[1])">Top Scores</button>
+
 	<style>
 	*{
 		margin: 0;
@@ -30,7 +32,7 @@
 	.board {
 		height: 85vh;
 		width: 80vw;
-		background-color: darkslategray;
+		background-color: rgb(randomint(0, 255), randomint(0, 255), randomint(0, 255));
 		border-style: solid;
 		border-width: 5px;
         border-color: white;
@@ -157,6 +159,14 @@
 	let dxd = Math.floor(Math.random() * 2);
 	let dyd = Math.floor(Math.random() * 2);
 
+	var top5scores = [
+	{name: 'Dylan', score: '15'},
+	{name: 'Dylan', score: '14'},
+	{name: 'Dylan', score: '14'},
+	{name: 'Dylan', score: '12'},
+	{name: 'Dylan', score: '10'},
+	];
+
 	document.addEventListener('keydown', (e) => {
 	if (gameState == 'start' ){
 		if (e.key == 'Enter') {
@@ -272,7 +282,7 @@
 		score = score.innerHTML;
 		gameState = 'start';
 		username = 'tempusername';
-		create_jjjj();
+		create_leaderboard();
 		ball_coord = initial_ball_coord;
 		ball.style = initial_ball.style;
 		message.innerHTML = 'Press Enter';
@@ -285,49 +295,5 @@
 	requestAnimationFrame(() => {
 		moveBall(dx, dy, dxd, dyd);
 	});
-}
+	}
 
-// prepare URL's to allow easy switch from deployment and localhost
-//const url = "http://localhost:8086/api/users"
-const url = "https://bestgroup.duckdns.org/api/jjjj"
-const create_fetch = url + '/create';
-
-function create_jjjj() {
-    if (document.getElementById("username").value.length == 0) {
-        return
-    }
-    const body = {
-        name: document.getElementById("username").value,
-        score: document.getElementById("score").value,
-    };
-
-    const requestOptions = {
-        method: 'POST',
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json",
-            'Authorization': 'Bearer my-token',
-        },
-    };
-
-    // URL for Create API
-    // Fetch API call to the database to create a new user
-    fetch(create_fetch, requestOptions)
-        .then(response => {
-        // trap error response from Web API
-        if (response.status !== 200) {
-            const errorMsg = 'Database create error: ' + response.status;
-            document.getElementById("reset") = errorMsg
-            return;
-        }
-        // response contains valid result
-        response.json().then(data => {
-            console.log(data);
-        })
-    })
-}
-
-</script>
-</body>
-
-</html>
