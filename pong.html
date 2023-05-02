@@ -131,7 +131,8 @@
 	<h1 class="message">
 		Press Enter
 	</h1>
-	<button type="button" onclick="alert(top5scores[0].name + ' : ' + top5scores[0].score + ' , ' + top5scores[1].name + ' : ' + top5scores[1].score + ' , ' + top5scores[2].name + ' : ' + top5scores[2].score)">View Top Scores</button>
+	<button type="faq" onclick="alert(frequentquestions[0].q + ' : ' + frequentquestions[0].a + ' , ' + frequentquestions[1].q + ' : ' + frequentquestions[1].a)">View FAQ</button>
+	<button type="button" onclick="alert(top5scores[0].name + ' : ' + top5scores[0].score + ' , ' + top5scores[1].name + ' : ' + top5scores[1].score + ' , ' + top5scores[2].name + ' : ' + top5scores[2].score)">View Top 3 Scores</button>
 </div>
 <script>
 	let gameState = 'start';
@@ -161,6 +162,11 @@
 	{name: 'Dylan', score: '14'},
 	{name: 'Dylan', score: '12'},
 	{name: 'Dylan', score: '10'}
+	];
+
+	var frequentquestions = [
+	{q: 'How do I play pong?', a: 'You press the w/a and ^/v keys to prevent the ball from going too far to the side.'},
+	{q: 'How do I get my score added to the leaderboard?', a: 'You email me your name for the leaderboard and your score with proof.'},
 	];
 
 	document.addEventListener('keydown', (e) => {
