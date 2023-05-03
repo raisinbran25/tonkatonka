@@ -14,48 +14,7 @@
         <div id="player2-score">0</div>
       </div>
     </div>
-    <script src="sqlite3.js"></script>
     <script>
-      // Initialize SQLite database
-      const db = new SQL.Database();
-      db.run("CREATE TABLE IF NOT EXISTS scores (name TEXT, score INTEGER)");
-
-      // Add new score to database
-      const addScoreToDatabase = (name, score) => {
-        const stmt = db.prepare("INSERT INTO scores (name, score) VALUES (?, ?)");
-        stmt.run(name, score);
-        stmt.free();
-      };
-
-      // Load scores from database and display in leaderboard
-      const loadScores = () => {
-        const results = db.exec("SELECT name, score FROM scores ORDER BY score DESC LIMIT 10");
-        const leaderboardBody = document.getElementById("leaderboard-body");
-        leaderboardBody.innerHTML = "";
-        results[0].values.forEach((row) => {
-          const name = row[0];
-          const score = row[1];
-          const newRow = document.createElement("tr");
-          const nameCell = document.createElement("td");
-          nameCell.textContent = name;
-          const scoreCell = document.createElement("td");
-          scoreCell.textContent = score;
-          newRow.appendChild(nameCell);
-          newRow.appendChild(scoreCell);
-          leaderboardBody.appendChild(newRow);
-        });
-      };
-      
-      // Submit score to database and update leaderboard
-      const submitScore = (event) => {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        const score = parseInt(document.getElementById("player1-score").textContent);
-        addScoreToDatabase(name, score);
-        loadScores();
-        event.target.reset();
-      };
-
       // Update player score and ball position on each frame
       const update = () => {
         // Update player scores
@@ -70,8 +29,51 @@
           document.getElementById("player1-score").textContent = player1Score + 1;
           ball.style.left = "245px";
           ball.style.top = "140px";
-         }
+        }
+
+        // Move ball
+        const x = ball.offsetLeft;
+        const y = ball.offsetTop;
+        ball.style.left = x + ball.dx + "px";
+        ball.style.top = y + ball.dy + "px";
+        
+        // Bounce ball off walls and paddles
+        if (y <= 0 || y >= 270) {
+          ball.dy *= -1;
+        }
+        const leftPaddle = document.getElementById("paddle-left");
+        const rightPaddle = document.getElementById("paddle-right");
+        const leftPaddleRect = leftPaddle.getBoundingClientRect();
+        const rightPaddleRect = rightPaddle.getBoundingClientRect();
+        if (x <= leftPaddleRect.right && y >= leftPaddleRect.top && y <= leftPaddleRect.bottom) {
+          ball.dx *= -1.1;
+        } else if (x >= rightPaddleRect.left && y >= rightPaddleRect.top && y <= rightPaddleRect.bottom) {
+          ball.dx *= -1.1;
+        }
       };
+
+      // Move paddles on mouse move
+      const onMouseMove = (event) => {
+        const y = event.clientY - gameContainerRect.top - paddleHeight / 2;
+        if (y < 0) {
+          leftPaddle.style.top = "0px";
+        } else if (y > gameContainerHeight - paddleHeight) {
+          leftPaddle.style.top = gameContainerHeight - paddleHeight + "px";
+        } else {
+          leftPaddle.style.top = y + "px";
+        }
+      };
+
+      // Initialize game
+      const gameContainer = document.getElementById("game-container");
+      const gameContainerRect = gameContainer.getBoundingClientRect();
+      const gameContainerHeight = gameContainerRect.bottom - gameContainerRect.top;
+      const paddleHeight = document.getElementById("paddle-left").offsetHeight;
+      const ball = document.getElementById("ball");
+      ball.dx = 4;
+      ball.dy = 4;
+      setInterval(update, 16);
+      gameContainer.addEventListener("mousemove", onMouseMove);
     </script>
   </body>
 </html>
