@@ -1,0 +1,20 @@
+{
+  "name": "tonkatonka",
+  "version": "1.0.0",
+  "description": "Usage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raisinbran25/tonkatonka.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raisinbran25/tonkatonka/issues"
+  },
+  "homepage": "https://github.com/raisinbran25/tonkatonka#readme"
+}
